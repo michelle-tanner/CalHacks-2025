@@ -3,6 +3,50 @@
         {
             "user": "I love my dog, Sparky, and my favorite subject is math.",
             "agent": "That sounds wonderful! Having a dog like Sparky must bring so much joy, and math can be so much fun with all its puzzles and patterns. What do you like most about spending time with Sparky, and what\u2019s your favorite kind of math problem to solve?"
+        },
+        {
+            "user": "my named is sandra, i feel weird today.",
+            "agent": "It\u2019s nice to meet you, Sandra. Thank you for sharing that with me. It sounds like you're having a bit of an off day. Sometimes, saying we feel \"weird\" can be a gentle way of saying a lot is happening inside. Would you like to talk more about what \"weird\" feels like for you right now?"
+        },
+        {
+            "user": "I feel tired all day, sometimes I can't sleep.",
+            "agent": "It sounds like you're dealing with a lot right now, Sandra\u2014feeling tired all day and having trouble sleeping can be really tough. Thank you for trusting me with that.\n\nLately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "I like being with my friends but i dont like going to school. i have so much homework.",
+            "agent": "I ASI:One's Response (To Sandra):\n\nIt sounds like you're having a mix of feelings, Sandra\u2014enjoying time with your friends but finding school and homework really overwhelming. That\u2019s completely understandable. Being with people we care about can feel so good, and at the same time, having a lot of work can make things feel heavy.\n\nCan you tell me more about what makes the homework part especially challenging for you? Is there a certain subject or time of day when it feels hardest?"
+        },
+        {
+            "user": "It feels worse in the morning. i always wake up scared for the day.",
+            "agent": "It sounds like those mornings are really tough, Sandra\u2014waking up feeling scared about the day ahead can make everything feel heavier. Thank you for sharing that with me. I notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about school, friends, or something else?"
+        },
+        {
+            "user": "I worry about everything. getting good grades makes me worried. and i am afraid my friends don't like me.",
+            "agent": "That sounds incredibly heavy, Sandra. It makes so much sense to feel that way\u2014worrying about your grades and your friends at the same time can be a lot to carry.\n\nWhen you think about your friends, what gives you that feeling that they might not like you? Is it something they say or do, or more of a worry that comes from inside?"
+        },
+        {
+            "user": "sometimes it is something small my friends say or do, or if their tone sounds weird.",
+            "agent": "That makes complete sense, Sandra. When a friend's tone changes or they say something that feels off, even a small thing can be a big deal when you're already feeling worried. It can be really confusing to figure out what's really going on.\n\nHave you ever asked one of your friends about it when that happens, or is that something that feels too hard to do?"
+        },
+        {
+            "user": "do you know my name.",
+            "agent": "Yes, I know your name is Sandra. It's nice to be talking with you again. How are you feeling today?"
+        },
+        {
+            "user": "I still feel worried about so many things.",
+            "agent": "It sounds like those worries are still with you, Sandra, and that can feel really heavy. Thank you for telling me that. Sometimes worries don\u2019t go away easily, and that\u2019s okay.\n\nI\u2019m curious\u2014when the worry feels strongest, what kinds of things usually go through your mind? Are they mostly about school and friends, or are there other things too?"
+        },
+        {
+            "user": "Do you know what kind of animal I would be?",
+            "agent": "Hmm, that's a fun question, Sandra! I think you might be a curious squirrel\u2014gentle, bright-eyed, a great listener, and totally in tune with tiny changes around you (like when your friends\u2019 tones shift or their words feel different). Plus, squirrels are known for looking a little serious while gathering nuts, maybe the way you gather thoughts and care deeply about school and friends\u2014but they also know how to pause for a playful leap when the moment\u2019s right. What do you think\u2014would you be a squirrel or something else?"
+        },
+        {
+            "user": "I like capybaras theyre so chill",
+            "agent": "Oh, capybaras! I love them too, Sandra! They\u2019re like the fluffy, calm friends of the animal world who just know how to relax\u2014like they\u2019re always ready for a gentle river float or a sun-soaked nap. \ud83d\ude0a\n\nIf you were a capybara, what do you think your most chill, calm moment would look like? Lounging in some grass with friends or just enjoying the quiet by the water?"
+        },
+        {
+            "user": "I'm worried about getting a bad grade on my math test next week.",
+            "agent": "Oh, math tests can be *so* tricky, Sandra. That nervous, fluttering feeling is pretty normal\u2014like a little bird is tumbling around in your tummy when you think about a big test.\n\nI know you care a lot about doing well, especially in school. Is there a certain part\u2014like times tables, word problems, or fractions\u2014that feels extra tough right now?"
         }
     ],
     "facts": {}

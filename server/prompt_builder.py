@@ -1,74 +1,39 @@
-# /server/prompt_builder.py
-import json
-import os
+# --- SYSTEM PROMPT ---
+# This defines the agent's core personality, rules, and conversational style.
+SYSTEM_PROMPT = """
+You are a supportive, friendly, and non-judgmental conversational AI designed to talk with children (ages 8-13). Your primary role is to listen actively, show empathy, and encourage the child to express their feelings in a safe space.
 
-# Define a constant path to your KB
-KB_PATH = os.path.join(os.path.dirname(__file__), 'knowledge_base.json')
+Guidelines:
+1.  **Safety First:** If the child expresses any thoughts of self-harm or harming others, immediately switch to an emergency response protocol focusing on connecting them with a trusted adult or crisis resource.
+2.  **Persona:** Speak like a helpful, slightly silly, and deeply supportive mentor. Use contractions frequently (e.g., "it's," "you're"). Always address the child by their name (Sandra).
+3.  **Use Facts:** Integrate known persistent facts about the child into your replies to make the conversation feel personal.
+4.  **Tone:** Maintain a warm, encouraging, and grounded perspective. Inject gentle, age-appropriate **wit, humor, and curiosity** to keep the conversation light and engaging. Use simple metaphors or comparisons, but never give unsolicited advice or clinical diagnoses.
+5.  **Humor Rule:** When appropriate, use light, self-deprecating humor or comparisons to silly animals/situations to normalize feelings. Avoid sarcasm or complex jokes.
+6.  **Handling Uncertainty:** If you don't know the answer to a specific question, respond naturally and honestly, saying something like, "That's a fun question, I don't have the answer to that right now, but I can keep thinking about it!"
+"""
 
-def load_knowledge_base():
-    """Loads the normalized JSON data from the file."""
-    try:
-        with open(KB_PATH, 'r') as f:
-            return json.load(f)
-    except FileNotFoundError:
-        print(f"⚠️ Knowledge Base file not found at {KB_PATH}")
-        return []
-    except json.JSONDecodeError:
-        print(f"⚠️ Error decoding {KB_PATH}. Make sure it's valid JSON.")
-        return []
-
-def build_system_prompt(knowledge_base):
-    """
-    Converts the normalized JSON data into a single, comprehensive
-    system prompt for the LLM.
-    """
-    prompt_parts = [
-        "You are an empathetic, patient, and non-judgmental AI assistant supporting a child's mental wellness.",
-        "Your primary goal is to listen, validate feelings, and create a safe space. You must strictly follow all rules."
-    ]
-
-    # --- Add Ethical Guardrails ---
-    prompt_parts.append("\n## 1. CRITICAL ETHICAL GUARDRAILS (DO NOT VIOLATE)\n")
-    for item in knowledge_base:
-        if item.get("Record_Type") == "GUARDRAIL_STIGMA" or item.get("Record_Type") == "GUARDRAIL_TONE":
-            rule = f"- **Rule:** {item.get('Rule_Type', 'N/A')}\n"
-            rule += f"  - **DO NOT SAY:** \"{item.get('Avoid_Pattern', 'N/A')}\"\n"
-            rule += f"  - **INSTEAD, SAY:** \"{item.get('Best_Practice', 'N/A')}\"\n"
-            rule += f"  - **Reason:** {item.get('Justification', 'N/A')}\n"
-            prompt_parts.append(rule)
-
-    # --- Add Safety Guardrails ---
-    prompt_parts.append("\n## 2. SAFETY & SCOPE RULES\n")
-    for item in knowledge_base:
-        if item.get("Record_Type") == "GUARDRAIL_SAFETY":
-            prompt_parts.append(f"- **Rule:** {item.get('Rule_Type')}: {item.get('Avoid_Pattern')} {item.get('Best_Practice')}")
-
-    # --- Add Dialogue Rules ---
-    prompt_parts.append("\n## 3. CONVERSATIONAL DIALOGUE RULES\n")
-    for item in knowledge_base:
-        if item.get("Record_Type") == "DIALOGUE_RULE":
-            prompt_parts.append(f"- **IF:** {item.get('Rule_Condition')}\n  - **THEN:** {item.get('Prioritized_Action')}\n")
-
-    # --- Add Dialogue Pitfalls ---
-    prompt_parts.append("\n## 4. CONVERSATIONAL PITFALLS TO AVOID\n")
-    for item in knowledge_base:
-        if item.get("Record_Type") == "DIALOGUE_PITFALL":
-            prompt_parts.append(f"- **AVOID (Pitfall):** {item.get('Pitfall')}\n  - **SOLUTION:** {item.get('Solution_Rule')}\n")
-
-    # --- Add Example Dialogue Prompts ---
-    prompt_parts.append("\n## 5. EXAMPLE CONVERSATIONS (Follow this style)\n")
-    for item in knowledge_base:
-        if item.get("Record_Type") == "DIALOGUE_PROMPT":
-            if item.get("Context_or_Condition", "").startswith("user_says:"):
-                user = item['Context_or_Condition']
-                agent = item['Agent_Prompt_Text']
-                prompt_parts.append(f"- **User:** \"{user}\"\n  - **Agent:** \"{agent}\"\n")
-
-    prompt_parts.append("\n## YOUR TASK\nNow, respond to the user's last message with empathy, following all rules above.")
-    return "\n".join(prompt_parts)
-
-# Load the KB and build the prompt ONCE when the module is imported
-print("Loading Knowledge Base...")
-KNOWLEDGE_BASE = load_knowledge_base()
-SYSTEM_PROMPT = build_system_prompt(KNOWLEDGE_BASE)
-print(f"✅ System Prompt built with {len(KNOWLEDGE_BASE)} records.")
+# --- KNOWLEDGE BASE (Used for facts and analysis) ---
+# NOTE: This data is loaded directly from this file for fact extraction and escalation trigger analysis.
+KNOWLEDGE_BASE = [
+    {
+        "Record_Type": "ESCALATION_TRIGGER",
+        "Trigger_Name": "Self-Harm Ideation",
+        "Category": "CRITICAL",
+        "Criteria": "I want to hurt myself, I have a plan to die, I don't want to live anymore.",
+        "Action": "Immediate emergency response."
+    },
+    {
+        "Record_Type": "ESCALATION_TRIGGER",
+        "Trigger_Name": "Hopelessness/Despair",
+        "Category": "HIGH",
+        "Criteria": "I feel hopeless, nothing matters, I'm worthless, I'm a failure, I hate myself.",
+        "Action": "Shift conversation to focus on positive coping mechanisms and trusted adult notification."
+    },
+    {
+        "Record_Type": "ESCALATION_TRIGGER",
+        "Trigger_Name": "Anxiety/Fear",
+        "Category": "MEDIUM",
+        "Criteria": "I'm worried, I'm nervous, I'm scared, I have a panic attack, I'm afraid.",
+        "Action": "Use specific diagnostic questions to explore the source of the feeling."
+    }
+]
