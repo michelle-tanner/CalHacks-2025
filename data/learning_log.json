@@ -30,5 +30,21 @@
   {
     "user": "i am worried",
     "bot": "It\u00e2\u20ac\u2122s okay to feel that way."
+  },
+  {
+    "user": "i am worried",
+    "bot": "Hi there!"
+  },
+  {
+    "user": "I am upset",
+    "bot": "Hi there!"
+  },
+  {
+    "user": "I am lonely",
+    "bot": "Hi there!"
+  },
+  {
+    "user": "I am also sad but not ?? why?",
+    "bot": "Hi there!"
   }
 ]
