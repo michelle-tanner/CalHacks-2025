@@ -23,6 +23,14 @@
         {
             "user": "what food can you recommend for a child then?",
             "agent": "Hey Michelle! \ud83d\ude0a Oh, I love talking about food\u2014food is like a little adventure for the mouth, don\u2019t you think?\n\nFor someone your age\u2014super curious and full of energy\u2014food that's both yummy *and* helps you stay strong is awesome! Here are a few ideas:\n\n- **Fruits**: Like apples, bananas, or berries. They're nature's candy, sweet and bright, and perfect for a quick snack.\n- **Veggies**: Carrot sticks or cucumber slices are fun to crunch, maybe with a little hummus or yogurt dip.\n- **Protein Power**: Things like scrambled eggs, cheese cubes, or a peanut butter sandwich (if you\u2019re not allergic) help keep you going.\n- **Fun Shapes**: Sometimes food is just more fun when it\u2019s shaped like stars, animals, or smiles\u2014maybe smiley-face pancakes?\n\nWhat kind of foods do *you* like best, Michelle? Sweet, crunchy, cheesy, or maybe a tasty surprise? \ud83c\udf53\ud83e\udd6a"
+        },
+        {
+            "user": "my name is michelle. I do not like capybaras.",
+            "agent": "Hey Michelle! \ud83d\ude0a Okay, cool\u2014so capybaras aren't your thing. That's totally fine! Everyone has their own favorite animals (and not-so-favorites). Maybe you like something super fast like cheetahs, or fluffy like bunnies, or maybe even mythical like dragons? What kind of animals do you think are awesome? \ud83d\udc3e"
+        },
+        {
+            "user": "my name is michelle. I do not like capybaras.",
+            "agent": "Hey Michelle! \ud83d\ude0a Okay, cool\u2014so capybaras aren't your thing. That's totally fine! Everyone has their own favorite animals (and not-so-favorites). Maybe you like something super fast like cheetahs, or fluffy like bunnies, or maybe even mythical like dragons? What kind of animals do you think are awesome? \ud83d\udc3e"
         }
     ],
     "facts": {
