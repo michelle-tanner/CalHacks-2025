@@ -31,14 +31,23 @@ async def get_agent_response(user_input: str) -> str:
     lowered = user_input.lower()
     if any(k in lowered for k in ["sad", "lonely", "upset", "worried"]):
         reply = memory.load_category("sadness")
+        if not reply: #fallback if memory fails to load
+            reply = "It's okay to feel that way. I'm here for you. (failed call to sadness)"
     else:
-        system_prompt = open("server/prompts/base_prompt.txt").read()
-        res = client.chat.completions.create(
-            model="asi1-mini",
-            messages=[
-                {"role": "system", "content": system_prompt},
-                {"role": "user", "content": user_input},
-            ],
-        )
-        reply = res.choices[0].message.content.strip()
+        try:
+            system_prompt = open("server/prompts/base_prompt.txt").read()
+            res = client.chat.completions.create(
+                model="asi1-mini",
+                messages=[
+                    {"role": "system", "content": system_prompt},
+                    {"role": "user", "content": user_input},
+                ],
+            )
+            reply = res.choices[0].message.content.strip()
+        except Exception as e:
+            print("⚠️ ASI:One error:", e)
+            reply = "Sorry, I couldnt' process that right now."
+    
+    print(f"User Input: {user_input}")
+    print(f"Agent Reply: {reply}")
     return reply

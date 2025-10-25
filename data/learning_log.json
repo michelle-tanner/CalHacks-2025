@@ -1,1 +1,34 @@
-[]
+[
+  {
+    "user": "[transcription error]",
+    "bot": "Sorry, I couldnt' process that right now."
+  },
+  {
+    "user": "I am feeling sad",
+    "bot": "It\u00e2\u20ac\u2122s okay to feel that way."
+  },
+  {
+    "user": "I am sad lately",
+    "bot": "It\u00e2\u20ac\u2122s okay to feel that way."
+  },
+  {
+    "user": "words",
+    "bot": "Sorry, I couldnt' process that right now."
+  },
+  {
+    "user": "i am sad",
+    "bot": "Hi there!"
+  },
+  {
+    "user": "hello",
+    "bot": "Sorry, I couldnt' process that right now."
+  },
+  {
+    "user": "[transcription error]",
+    "bot": "Sorry, I couldnt' process that right now."
+  },
+  {
+    "user": "i am worried",
+    "bot": "It\u00e2\u20ac\u2122s okay to feel that way."
+  }
+]

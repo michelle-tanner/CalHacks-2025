@@ -52,15 +52,23 @@ async def voice_chat(ws: WebSocket):
             else:
                 continue
 
+            print(f"Data type received: {type(data)}")
             print(f"👦 User: {user_text}")
             reply_text = await get_agent_response(user_text)
             print(f"🤖 Agent: {reply_text}")
 
-            memory.remember(user_text, reply_text)
+            if isinstance(reply_text, str):
+                memory.remember(user_text, reply_text)
+                audio_reply = await synthesize_speech(reply_text)
+                await ws.send_bytes(audio_reply)
+            else:
+                print("⚠️ Reply is not a string.")
+                await ws.send_text("[Error: Invalid reply format]")
+
 
             # Optionally, send the reply as audio (Text-to-Speech)
-            audio_reply = await synthesize_speech(reply_text)
-            await ws.send_bytes(audio_reply)
+            # audio_reply = await synthesize_speech(reply_text)
+            # await ws.send_bytes(audio_reply)
     except Exception as e:
         print("WebSocket closed:", e)
         await ws.close()
