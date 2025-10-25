@@ -1,11 +1,20 @@
 import os
-from fastapi import FastAPI, UploadFile, File, WebSocket
+from fastapi import FastAPI, UploadFile, File, WebSocket, Request
 from fastapi.middleware.cors import CORSMiddleware
 from dotenv import load_dotenv
 from server.stt import transcribe_audio
 from server.tts import synthesize_speech
-from server.agent import get_agent_response
+from server.agent import get_agent_response, client # Import client for use below
 from server.json_memory import memory
+
+# --- New Imports for Agentverse Chat Protocol ---
+from uagents_core.contrib.protocols.chat import (
+    ChatMessage, 
+    TextContent, 
+    ChatAcknowledgement
+)
+from datetime import datetime
+from uuid import uuid4
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -33,7 +42,10 @@ app.add_middleware(
     allow_headers=["*"]
 )
 
-# WebSocket endpoint for voice chat
+
+# ------------------------------------------------
+## 1. WebSocket Endpoint (Original Voice Chat)
+# ------------------------------------------------
 @app.websocket("/voice")
 async def voice_chat(ws: WebSocket):
     await ws.accept()
@@ -54,24 +66,70 @@ async def voice_chat(ws: WebSocket):
 
             print(f"Data type received: {type(data)}")
             print(f"👦 User: {user_text}")
+            
             reply_text = await get_agent_response(user_text)
+            
             print(f"🤖 Agent: {reply_text}")
 
             if isinstance(reply_text, str):
+                #save conversation to memory
                 memory.remember(user_text, reply_text)
+                #synthesize speech using ElevenLabs TTS 
                 audio_reply = await synthesize_speech(reply_text)
                 await ws.send_bytes(audio_reply)
             else:
                 print("⚠️ Reply is not a string.")
                 await ws.send_text("[Error: Invalid reply format]")
-
-
             # Optionally, send the reply as audio (Text-to-Speech)
             # audio_reply = await synthesize_speech(reply_text)
             # await ws.send_bytes(audio_reply)
     except Exception as e:
         print("WebSocket closed:", e)
         await ws.close()
+
+# ------------------------------------------------
+## 2. HTTP POST Endpoint (Agentverse/ASI:One Protocol)
+# ------------------------------------------------
+# This is the required endpoint for hackathon qualification.
+@app.post("/protocol-chat", response_model=ChatMessage)
+async def agentverse_chat(incoming_message: ChatMessage):
+    """
+    Handles structured ChatProtocol messages from Agentverse/ASI:One.
+    This endpoint ensures hackathon track compatibility.
+    """
+    
+    # 1. Extract the user's text from the structured message
+    user_text = ""
+    for content in incoming_message.content:
+        # The actual text is inside the TextContent model
+        if isinstance(content, TextContent):
+            user_text = content.text
+            break
+
+    if not user_text:
+        # Acknowledge the message but return an error if no text is present
+        return ChatAcknowledgement(timestamp=datetime.utcnow(), acknowledged_msg_id=incoming_message.msg_id)
+
+    # 2. Call the unified agent logic
+    reply_text = await get_agent_response(user_text)
+    print(f"🌐 Agentverse User: {user_text}")
+    print(f"🌐 Agentverse Reply: {reply_text}")
+
+    # 3. Wrap the agent's response back into a ChatMessage
+    outgoing_message = ChatMessage(
+        timestamp=datetime.utcnow(),
+        msg_id=uuid4(),
+        content=[TextContent(type="text", text=reply_text)]
+    )
+    
+    # NOTE: In a real uAgents setup, you'd send an ACK first, then the response.
+    # For a simple web hook registration, returning the response message is often sufficient.
+    
+    return outgoing_message
+
+# ------------------------------------------------
+## 3. Standard FastAPI Endpoints (Remaining API)
+# ------------------------------------------------
 
 # Endpoint for summarizing the conversation
 @app.get("/summary")

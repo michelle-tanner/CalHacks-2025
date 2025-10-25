@@ -46,5 +46,13 @@
   {
     "user": "I am also sad but not ?? why?",
     "bot": "Hi there!"
+  },
+  {
+    "user": "Hello, my name is Michelle",
+    "bot": "Sorry, I couldnt' process that right now."
+  },
+  {
+    "user": "Hello I am feeling a little lonely",
+    "bot": "It\u00e2\u20ac\u2122s okay to feel that way."
   }
 ]

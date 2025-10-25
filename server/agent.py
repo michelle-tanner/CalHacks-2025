@@ -4,7 +4,7 @@ from openai import OpenAI
 from server.json_memory import memory
 
 from dotenv import load_dotenv
-import os
+
 
 # Load environment variables from the .env file
 load_dotenv()
@@ -27,12 +27,14 @@ client = OpenAI(
 
 async def get_agent_response(user_input: str) -> str:
     """Use JSON fallback or ASI:One model for a reply."""
-    # simple rule-based branch for emotion words
+    
+    #1. Simple rule-based branch for emotion words (Fallback/Memory)
     lowered = user_input.lower()
     if any(k in lowered for k in ["sad", "lonely", "upset", "worried"]):
         reply = memory.load_category("sadness")
         if not reply: #fallback if memory fails to load
             reply = "It's okay to feel that way. I'm here for you. (failed call to sadness)"
+    #2. LLM Call (Main Logic)
     else:
         try:
             system_prompt = open("server/prompts/base_prompt.txt").read()
@@ -48,6 +50,4 @@ async def get_agent_response(user_input: str) -> str:
             print("⚠️ ASI:One error:", e)
             reply = "Sorry, I couldnt' process that right now."
     
-    print(f"User Input: {user_input}")
-    print(f"Agent Reply: {reply}")
     return reply
