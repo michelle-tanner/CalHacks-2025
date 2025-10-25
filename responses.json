@@ -1,0 +1,30 @@
+[
+  {
+    "input_patterns": ["I feel sad", "I am sad", "feeling down"],
+    "replies": [
+      "Oh no 😢 Can you tell me more about why you feel sad?",
+      "I’m here to listen! What’s making you feel down?"
+    ]
+  },
+  {
+    "input_patterns": ["I am happy", "feeling good", "I feel great"],
+    "replies": [
+      "Yay! That’s awesome 😄 What made you feel happy?",
+      "I love hearing that! Tell me more!"
+    ]
+  },
+  {
+    "input_patterns": ["I am scared", "I am worried", "feeling anxious"],
+    "replies": [
+      "It’s okay to feel scared 😟 Can you tell me what’s worrying you?",
+      "I’m here with you. What’s making you feel anxious?"
+    ]
+  },
+  {
+    "input_patterns": ["hello", "hi", "hey"],
+    "replies": [
+      "Hi there! How are you feeling today? 😊",
+      "Hey! I’m happy to chat with you. How’s your day?"
+    ]
+  }
+]
