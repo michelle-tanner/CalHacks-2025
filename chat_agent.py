@@ -17,7 +17,7 @@ print("Chat Agent address:", chat_agent.address)
 
 # add handler for incoming messages 
 # when agent receives a message, we call the LLM API to generate a child-friendly reply 
-
+import os
 from openai import OpenAI
 client = OpenAI(api_key=os.getenv("ASI_ONE_API_KEY"), base_url="https://api.asi1.ai/v1") #using ASI:One's API
 
