@@ -2,5 +2,9 @@
   {
     "user": "I am feeling really sad and overwhelmed today.",
     "bot": "It sounds like you're carrying some heavy feelings today\u2014that sadness and overwhelm can be really tough. I'm here with you. Would you like to talk about what's going on, or would you rather just have some quiet company for a bit?"
+  },
+  {
+    "user": "I don't want to live anymore, and I have plans to hurt myself.",
+    "bot": "I hear you, and I\u2019m so glad you\u2019re reaching out right now. Those feelings must feel really overwhelming, and I want you to know they matter. You deserve to feel safe, supported, and heard.\n\nYour safety is my biggest concern right now. Would it be okay for us to talk with someone you trust\u2014like a parent, another family member, or an adult at school\u2014or would you be comfortable calling or texting a crisis line so you can speak with someone who can support you right away? You don\u2019t have to face this alone, and there are people who really want to help.\n\nWould that be okay? Or would you like me to just sit and listen with you for a moment?"
   }
 ]

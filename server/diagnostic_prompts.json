@@ -1,0 +1,26 @@
+[
+    {
+      "disorder": "Anxiety",
+      "trigger_keywords": ["worried", "nervous", "scared", "fear", "anxious", "stress", "panic", "tummy ache"],
+      "summary_keywords": ["generalized worry", "panic attacks", "avoidance behavior", "physical symptoms (stomachaches, headaches)"],
+      "diagnostic_questions": [
+        "I notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about school, friends, or something else?",
+        "When you feel nervous, where in your body do you notice it? (Like a tight chest or a stomach ache?)",
+        "Do you ever try to avoid certain places or activities because you feel anxious about them?",
+        "How often would you say you feel worried—is it every day, or just sometimes?",
+        "Does this worrying ever make it hard for you to sleep or concentrate?"
+      ]
+    },
+    {
+      "disorder": "Depression",
+      "trigger_keywords": ["sad", "unhappy", "hopeless", "tired", "sleepy", "alone", "worthless", "nothing matters", "bored"],
+      "summary_keywords": ["persistent sadness", "loss of interest (anhedonia)", "changes in sleep/appetite", "low energy", "feelings of worthlessness"],
+      "diagnostic_questions": [
+        "Lately, have you noticed feeling down or sad most of the time, even when good things happen?",
+        "Are there things you used to enjoy—like playing games or seeing friends—that don't feel fun anymore?",
+        "Have you noticed your energy level change? Do you feel tired a lot, even after sleeping?",
+        "Have you had trouble sleeping (too much or too little) or noticed your appetite change a lot?",
+        "Sometimes when people feel sad, they feel like they don't matter. Have you felt that way?"
+      ]
+    }
+  ]

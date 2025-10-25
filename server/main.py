@@ -1,11 +1,12 @@
 import os
 from fastapi import FastAPI, UploadFile, File, WebSocket
 from fastapi.middleware.cors import CORSMiddleware
-from pydantic import BaseModel # New Import for structured input
+from pydantic import BaseModel
 from dotenv import load_dotenv
 from server.stt import transcribe_audio
 from server.tts import synthesize_speech
-from server.agent import get_agent_response
+# UPDATED IMPORT: We now import both core agent functions
+from server.agent import get_agent_response, generate_parent_summary_response 
 from server.json_memory import memory
 
 # Pydantic model for incoming JSON text messages
@@ -65,8 +66,6 @@ async def voice_chat(ws: WebSocket):
             print(f"🤖 Agent: {reply_text}")
             print(f"🚨 Analysis: {response_dict['analysis']}")
 
-            memory.remember(user_text, reply_text)
-
             # Optionally, send the reply as audio (Text-to-Speech)
             audio_reply = await synthesize_speech(reply_text)
             await ws.send_bytes(audio_reply)
@@ -74,31 +73,45 @@ async def voice_chat(ws: WebSocket):
         print("WebSocket closed:", e)
         await ws.close()
 
-# --- NEW ENDPOINT FOR TEXT-TO-TEXT TESTING ---
+# --- ENDPOINT FOR TEXT-TO-TEXT CHAT ---
 @app.post("/message", response_model=dict)
 async def handle_text_message(request: MessageRequest):
     """
     Handles simple text message input and returns the agent's reply
-    along with the internal safety analysis.
+    along with the internal safety analysis and updated facts.
     """
     user_text = request.message
     print(f"📥 Received text message: {user_text}")
 
-    # Use the updated get_agent_response that returns reply and analysis
+    # Use the updated get_agent_response that returns reply, analysis, and facts
     response_data = await get_agent_response(user_text)
-    
-    # Store history for summary endpoint
-    memory.remember(user_text, response_data['reply'])
 
     return response_data
-# ---------------------------------------------
+# --------------------------------------
 
-# Endpoint for summarizing the conversation
+# UPDATED ENDPOINT: Now returns both conversation context and learned facts
 @app.get("/summary")
 async def get_summary():
-    return {"conversations": memory.context}
+    """Returns the full conversation context and the learned child facts."""
+    return {"conversations": memory.context, "facts": memory.get_facts()}
+# -----------------------------------------------------------------
 
-# API endpoint for agent response (if needed) - KEEPING BUT FIXING ARGUMENTS
+# --- NEW ENDPOINT FOR PARENT SUMMARY ---
+@app.post("/parent_summary")
+async def generate_parent_report():
+    """
+    Generates a holistic summary and professional recommendation for the parent
+    based on the full history and stored facts.
+    """
+    report = await generate_parent_summary_response()
+    
+    # Optional: If you want to clear memory after generating the report
+    # memory.clear() 
+    
+    return report
+# ---------------------------------------
+
+# API endpoint for agent response (if needed)
 @app.get("/agent")
 async def agent_response(message: str = "Hello, what should I say?"):
     response_data = await get_agent_response(message)
@@ -113,5 +126,4 @@ async def stt_transcription(audio_file: UploadFile = File(...)):
 # Run the FastAPI app with Uvicorn
 if __name__ == "__main__":
     import uvicorn
-    # Note: Uvicorn auto-reloads, so the server will restart now
     uvicorn.run("server.main:app", host="0.0.0.0", port=8000, reload=True)

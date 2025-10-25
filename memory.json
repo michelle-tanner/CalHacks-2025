@@ -1,0 +1,9 @@
+{
+    "context": [
+        {
+            "user": "I love my dog, Sparky, and my favorite subject is math.",
+            "agent": "That sounds wonderful! Having a dog like Sparky must bring so much joy, and math can be so much fun with all its puzzles and patterns. What do you like most about spending time with Sparky, and what\u2019s your favorite kind of math problem to solve?"
+        }
+    ],
+    "facts": {}
+}
