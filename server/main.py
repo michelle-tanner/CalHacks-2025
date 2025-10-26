@@ -52,6 +52,8 @@ app.add_middleware(
 # ------------------------------------------------
 ## 1. WebSocket Endpoint (Original Voice Chat - Combined Logic)
 # ------------------------------------------------
+
+from starlette.websockets import WebSocketDisconnect #add if not present
 @app.websocket("/voice")
 async def voice_chat(ws: WebSocket):
     await ws.accept()
@@ -59,16 +61,34 @@ async def voice_chat(ws: WebSocket):
 
     try:
         while True:
-            data = await ws.receive_json()
+            #ws.receive() to handle text, bytes, or json
+            data = await ws.receive()
+            user_text = ""
 
             # Handle text or audio bytes from WebSocket
             if "text" in data:
                 user_text = data["text"]
             elif "bytes" in data:
                 audio_bytes = data["bytes"]
+                print(f"🎙️ Received {len(audio_bytes)} bytes of audio.")
+                
+                #skip empty messages
+                if not audio_bytes:
+                    continue 
+
+                #call STT module with raw bytes 
                 user_text = await transcribe_audio(audio_bytes)
-            else:
+                print(f"👂 Transcription Result: {user_text}")
+            
+            # Client sent a text message inside a JSON object (for flexibility)
+            elif "json" in data and "text" in data["json"]:
+                user_text = data["json"]["text"]
+            if not user_text or user_text in ["[Deepgram API key missing]", "[transcription error]"]:
+                if "[transcription error]" in user_text:
+                    await ws.send_text("I'm sorry, I had trouble hearing you. Can you try again?")
                 continue
+            # else:
+                # continue
 
             print(f"👦 User: {user_text}")
 
@@ -84,16 +104,27 @@ async def voice_chat(ws: WebSocket):
 
             # Synthesize speech and send bytes (standard logic)
             audio_reply = await synthesize_speech(reply_text)
-            await ws.send_bytes(audio_reply)
             
+            if audio_reply:
+                await ws.send_bytes(audio_reply)
+            else:
+                await ws.send_text("I can't talk right now, but here is my text reply: " + reply_text)
+
+            pass 
+        
+    except WebSocketDisconnect:
+        print("🎙️ WebSocket disconnected cleanly.")
     except Exception as e:
-        print("WebSocket closed:", e)
-        await ws.close()
+        print("⚠️ WebSocket closed due to an error:", e)
+        try:
+            await ws.close()
+        except Exception:
+            pass
 
 
 # ------------------------------------------------
 ## 2. HTTP POST Endpoint (Agentverse/ASI:One Protocol - from File 1)
-# ------------------------------------------------
+# ------------------------------------------------ 
 @app.post("/protocol-chat", response_model=ChatMessage)
 async def agentverse_chat(incoming_message: ChatMessage):
     """

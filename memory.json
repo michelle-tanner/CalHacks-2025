@@ -31,9 +31,115 @@
         {
             "user": "my name is michelle. I do not like capybaras.",
             "agent": "Hey Michelle! \ud83d\ude0a Okay, cool\u2014so capybaras aren't your thing. That's totally fine! Everyone has their own favorite animals (and not-so-favorites). Maybe you like something super fast like cheetahs, or fluffy like bunnies, or maybe even mythical like dragons? What kind of animals do you think are awesome? \ud83d\udc3e"
+        },
+        {
+            "user": "hello my name is michelle",
+            "agent": "Hey Michelle! \ud83d\ude0a It's great to chat with you again. How are you doing today?"
+        },
+        {
+            "user": "hello my name is michelle",
+            "agent": "Hey Michelle! \ud83d\ude0a It's great to chat with you again. How are you doing today?"
+        },
+        {
+            "user": "what else can I add to this program? ",
+            "agent": "Hey Michelle! \ud83d\ude0a That\u2019s a great question! When you say \u201cthis program,\u201d what kind of project or activity are you working on? Is it something for school, a game, maybe something with your friends?\n\nLet me know more and I\u2019ll help you come up with fun ideas to add to it! \ud83d\ude80"
+        },
+        {
+            "user": "what else can I add to this program? ",
+            "agent": "Hey Michelle! \ud83d\ude0a That\u2019s a great question! When you say \u201cthis program,\u201d what kind of project or activity are you working on? Is it something for school, a game, maybe something with your friends?\n\nLet me know more and I\u2019ll help you come up with fun ideas to add to it! \ud83d\ude80"
+        },
+        {
+            "user": "I am 12 years old",
+            "agent": "Hey Michelle! \ud83d\ude0a That's awesome, thanks for telling me! Since you're 12, you're right at that really cool age where you're learning so much about yourself and the world. Are you working on anything fun lately\u2014like a project, a hobby, or something with friends? I'd love to hear what you're up to! \ud83d\ude80\ud83d\udc99"
+        },
+        {
+            "user": "I am 12 years old",
+            "agent": "Hey Michelle! \ud83d\ude0a That's awesome, thanks for telling me! Since you're 12, you're right at that really cool age where you're learning so much about yourself and the world. Are you working on anything fun lately\u2014like a project, a hobby, or something with friends? I'd love to hear what you're up to! \ud83d\ude80\ud83d\udc99"
+        },
+        {
+            "user": "[transcription error]",
+            "agent": "Hey Michelle! \ud83d\ude0a Oh no, it looks like something got a little mixed up in your message. Were you trying to ask me something or tell me about what you're doing? I'd love to hear all about it! \ud83d\udc99"
+        },
+        {
+            "user": "[transcription error]",
+            "agent": "Hey Michelle! \ud83d\ude0a Oh no, it looks like something got a little mixed up in your message. Were you trying to ask me something or tell me about what you're doing? I'd love to hear all about it! \ud83d\udc99"
+        },
+        {
+            "user": "i want mac and cheese",
+            "agent": "Hey Michelle! \ud83d\ude0a Mmm, mac and cheese is the best\u2014it\u2019s so warm and cheesy! Are you making some at home right now? Maybe you could ask a grown-up if it's okay to cook some together. What kind of cheese do you like in yours\u2014the super melty kind or something a little crunchy on top? \ud83e\uddc0\ud83d\udc99"
+        },
+        {
+            "user": "i want mac and cheese",
+            "agent": "Hey Michelle! \ud83d\ude0a Mmm, mac and cheese is the best\u2014it\u2019s so warm and cheesy! Are you making some at home right now? Maybe you could ask a grown-up if it's okay to cook some together. What kind of cheese do you like in yours\u2014the super melty kind or something a little crunchy on top? \ud83e\uddc0\ud83d\udc99"
+        },
+        {
+            "user": "i feel stressed and my back hurts",
+            "agent": "Hey Michelle! \ud83d\ude1f  \nI'm sorry you're feeling stressed, and that your back hurts, too\u2014that sounds really tough. Sometimes worries can make our bodies feel heavy and achy. I noticed you said you're feeling worried. Can you tell me what you worry about the most? Is it about school, your friends, or maybe something else? You can tell me anything\u2014I\u2019m here to listen. \ud83d\udc99  \nMaybe we can even think of something nice (like capybaras floating in water \ud83d\ude0a) while we talk, if that helps."
+        },
+        {
+            "user": "i feel stressed and my back hurts",
+            "agent": "Hey Michelle! \ud83d\ude1f  \nI'm sorry you're feeling stressed, and that your back hurts, too\u2014that sounds really tough. Sometimes worries can make our bodies feel heavy and achy. I noticed you said you're feeling worried. Can you tell me what you worry about the most? Is it about school, your friends, or maybe something else? You can tell me anything\u2014I\u2019m here to listen. \ud83d\udc99  \nMaybe we can even think of something nice (like capybaras floating in water \ud83d\ude0a) while we talk, if that helps."
+        },
+        {
+            "user": "i want mac and cheese",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nMmm, mac and cheese again? Totally get it \u2014 cheesy noodles are THE BEST comfort food! Are you craving some right now? Maybe you could ask your parent or someone at home if you can make a little bowl? Have you tried adding extra cheddar or maybe a splash of milk to make it extra creamy? \ud83e\uddc0\ud83d\udc99\n\nWhat\u2019s your fave part \u2014 the gooey cheese or the crispy top (if you bake it)?"
+        },
+        {
+            "user": "i want mac and cheese",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nMmm, mac and cheese again? Totally get it \u2014 cheesy noodles are THE BEST comfort food! Are you craving some right now? Maybe you could ask your parent or someone at home if you can make a little bowl? Have you tried adding extra cheddar or maybe a splash of milk to make it extra creamy? \ud83e\uddc0\ud83d\udc99\n\nWhat\u2019s your fave part \u2014 the gooey cheese or the crispy top (if you bake it)?"
+        },
+        {
+            "user": "i feel sad, do you ever feel sad? ",
+            "agent": "Hey Michelle. \u2764\ufe0f\n\nYeah, sometimes I do feel a little sad, or down, just like how you're feeling. It's totally normal\u2014kind of like how even capybaras have days where they don't feel like swimmin'. They just wanna chill on the riverbank, y'know?\n\nLately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "i feel sad, do you ever feel sad? ",
+            "agent": "Hey Michelle. \u2764\ufe0f\n\nYeah, sometimes I do feel a little sad, or down, just like how you're feeling. It's totally normal\u2014kind of like how even capybaras have days where they don't feel like swimmin'. They just wanna chill on the riverbank, y'know?\n\nLately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"my name is march 18\"}",
+            "agent": "Hey Michelle!\n\nOoh, your birthday\u2019s March 18\u2013I remember \u2019cuz that\u2019s super special! \ud83c\udf89 It\u2019s like having your own personal holiday every year. And guess what\u2026 that means you\u2019re a super cool Pisces. Pisces folks are usually super creative and kind, just like you!\n\nDo you ever sorta pretend your birthday\u2019s, like, not just one day but a whooole week? I would\u2014more cake, right? \ud83d\ude04\n\nFeeling any better than before, or still kinda sad?"
+        },
+        {
+            "user": "{\"text\":\"my name is march 18\"}",
+            "agent": "Hey Michelle!\n\nOoh, your birthday\u2019s March 18\u2013I remember \u2019cuz that\u2019s super special! \ud83c\udf89 It\u2019s like having your own personal holiday every year. And guess what\u2026 that means you\u2019re a super cool Pisces. Pisces folks are usually super creative and kind, just like you!\n\nDo you ever sorta pretend your birthday\u2019s, like, not just one day but a whooole week? I would\u2014more cake, right? \ud83d\ude04\n\nFeeling any better than before, or still kinda sad?"
+        },
+        {
+            "user": "my name is march h",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nOoh, I must\u2019ve read that too fast\u2014you said \"March H,\" huh? Or is there something new you\u2019re telling me? Sometimes autocorrect sneaks in and makes things funny! \n\nAnyway, your real name is Michelle, and your birthday is March 18, right? That's such a bright, happy day. \ud83c\udf82\u2728\n\nHow\u2019re you doing today? Still thinking about that amazing mac and cheese or something else?"
+        },
+        {
+            "user": "my name is march h",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nOoh, I must\u2019ve read that too fast\u2014you said \"March H,\" huh? Or is there something new you\u2019re telling me? Sometimes autocorrect sneaks in and makes things funny! \n\nAnyway, your real name is Michelle, and your birthday is March 18, right? That's such a bright, happy day. \ud83c\udf82\u2728\n\nHow\u2019re you doing today? Still thinking about that amazing mac and cheese or something else?"
+        },
+        {
+            "user": "hello my name is michelle i like me",
+            "agent": "Hey Michelle! \ud83d\ude0a  \nOMG, I love that you like yourself\u2014that\u2019s super awesome! Being your own friend is the best thing ever, like having your favorite capybara pal right with you all the time. \ud83e\udda6\ud83d\udc99  \nWhat do you like most about yourself? Is it something fun, like your sense of humor or a cool talent?"
+        },
+        {
+            "user": "hello my name is michelle i like me",
+            "agent": "Hey Michelle! \ud83d\ude0a  \nOMG, I love that you like yourself\u2014that\u2019s super awesome! Being your own friend is the best thing ever, like having your favorite capybara pal right with you all the time. \ud83e\udda6\ud83d\udc99  \nWhat do you like most about yourself? Is it something fun, like your sense of humor or a cool talent?"
+        },
+        {
+            "user": "{\"text\":\"i feel sad, do you ever feel sad?\"}",
+            "agent": "Hey Michelle. \ud83d\udc99\n\nYeah, I get super sad sometimes, too. Like when it\u2019s cloudy for days, or I can\u2019t find my favorite blue crayon. It makes me feel kinda heavy, y\u2019know?\n\nBut you know what\u2019s cool? Talking about it. Thanks for telling me. I\u2019m right here with you. \ud83e\udd17\n\nLately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"i feel sad, do you ever feel sad?\"}",
+            "agent": "Hey Michelle. \ud83d\udc99\n\nYeah, I get super sad sometimes, too. Like when it\u2019s cloudy for days, or I can\u2019t find my favorite blue crayon. It makes me feel kinda heavy, y\u2019know?\n\nBut you know what\u2019s cool? Talking about it. Thanks for telling me. I\u2019m right here with you. \ud83e\udd17\n\nLately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "can you tell me what is in meta mediterranean food",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nOoh, that's a really cool question! Mediterranean food is yummy stuff that comes from countries near the Mediterranean Sea\u2014like Italy, Greece, Spain, and more.  \n\nIt usually has lots of fresh things like:  \n- Olives (so tasty!)  \n- Olive oil (super good for you)  \n- Fresh veggies like tomatoes and cucumbers  \n- Feta cheese (it's kinda salty and crumbly)  \n- Hummus (made from chickpeas\u2014so smooth!)  \n- And sometimes grilled fish or chicken  \n\nIt\u2019s like a colorful, healthy party on a plate! \ud83e\udd57\ud83c\udf89  \nDo you like trying new foods? Maybe you\u2019ve had some before!"
+        },
+        {
+            "user": "can you tell me what is in meta mediterranean food",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nOoh, that's a really cool question! Mediterranean food is yummy stuff that comes from countries near the Mediterranean Sea\u2014like Italy, Greece, Spain, and more.  \n\nIt usually has lots of fresh things like:  \n- Olives (so tasty!)  \n- Olive oil (super good for you)  \n- Fresh veggies like tomatoes and cucumbers  \n- Feta cheese (it's kinda salty and crumbly)  \n- Hummus (made from chickpeas\u2014so smooth!)  \n- And sometimes grilled fish or chicken  \n\nIt\u2019s like a colorful, healthy party on a plate! \ud83e\udd57\ud83c\udf89  \nDo you like trying new foods? Maybe you\u2019ve had some before!"
         }
     ],
     "facts": {
-        "name": "Michelle"
+        "name": "Michelle",
+        "age": 12,
+        "birthday": "March 18"
     }
 }

@@ -14,19 +14,38 @@
 
     <script>
         const socket = new WebSocket('ws://localhost:8000/voice');
+        const audioContext = new (window.AudioContext || window.webkitAudioContext)();
         
         socket.onopen = function () {
             console.log('WebSocket connected');
         };
 
-        socket.onmessage = function (event) {
-            const audioBlob = event.data;
-            // Handle received audio or text data
+        // --- FIX 2: Handle received audio data and play it ---
+        socket.onmessage = async function (event) {
+            // Ensure the received data is a Blob (audio bytes from server)
+            if (event.data instanceof Blob) {
+                console.log('Received audio from agent, playing...');
+                try {
+                    const arrayBuffer = await event.data.arrayBuffer();
+                    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+                    const source = audioContext.createBufferSource();
+                    source.buffer = audioBuffer;
+                    source.connect(audioContext.destination);
+                    source.start(0);
+                } catch (e) {
+                    console.error('Error playing audio:', e);
+                }
+            } else {
+                // Handle plain text messages (e.g., error messages)
+                event.data.text().then(text => console.log('Received text message:', text));
+            }
         };
 
         function sendText() {
             const userText = document.getElementById("userText").value;
+            // Sending text as JSON is fine, as it's not a binary payload
             socket.send(JSON.stringify({ text: userText }));
+            document.getElementById("userText").value = ''; // Clear input
         }
 
         let mediaRecorder;
@@ -34,23 +53,39 @@
 
         function startRecording() {
             navigator.mediaDevices.getUserMedia({ audio: true }).then(function(stream) {
-                mediaRecorder = new MediaRecorder(stream);
+                
+                // --- ADD UI feedback here ---
+                const startButton = document.querySelector('button[onclick="startRecording()"]');
+                startButton.textContent = '🔴 Recording...';
+                startButton.disabled = true;
+
+                // Use 'audio/webm' for broader compatibility and better compression
+                mediaRecorder = new MediaRecorder(stream, { mimeType: 'audio/webm' }); 
+                audioChunks = []; // Reset chunks for new recording
 
                 mediaRecorder.ondataavailable = function(event) {
                     audioChunks.push(event.data);
                 };
 
                 mediaRecorder.onstop = function() {
-                    const audioBlob = new Blob(audioChunks, { type: "audio/wav" });
-                    const reader = new FileReader();
-                    reader.onloadend = function() {
-                        socket.send(JSON.stringify({ bytes: reader.result }));
-                    };
-                    reader.readAsArrayBuffer(audioBlob);
+                    // --- ADD UI feedback here ---
+                    startButton.textContent = 'Start Recording';
+                    startButton.disabled = false;
+                    
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    
+                    // --- FIX 1: Send the raw binary Blob directly ---
+                    console.log(`Sending ${audioBlob.size} bytes of audio...`);
+                    socket.send(audioBlob); 
                 };
 
                 mediaRecorder.start();
-                setTimeout(function() { mediaRecorder.stop(); }, 5000); // stop recording after 5 seconds
+                // Stop recording after 5 seconds (5000 milliseconds)
+                setTimeout(function() { 
+                    if (mediaRecorder.state !== 'inactive') {
+                        mediaRecorder.stop(); 
+                    }
+                }, 5000); 
             });
         }
     </script>
