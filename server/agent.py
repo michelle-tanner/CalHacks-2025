@@ -24,7 +24,8 @@ else:
 # FIX: Removed the markdown link format from the base_url
 client = OpenAI(
    api_key=os.getenv("ASI_ONE_API_KEY"),
-   base_url="https://api.asi1.ai/v1"
+   base_url="https://api.asi1.ai/v1",
+   model="asi1-mini"
 )
 
 # --- Load Diagnostic Prompts ---

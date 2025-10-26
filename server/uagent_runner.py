@@ -30,7 +30,7 @@ AGENTVERSE_ENDPOINT = os.getenv("AGENTVERSE_ENDPOINT", "https://agentverse.ai")
 agent = Agent(
     name="child-imitation-agent",
     port=8001,
-    endpoint=("http://127.0.0.1:8001/submit"),
+    endpoint=["http://127.0.0.1:8001/submit"],
     mailbox=True,
 )
 
@@ -38,6 +38,10 @@ agent = Agent(
 chat_protocol = Protocol(name="Chat", version="1.0")
 
 #handler
+@agent.on_event("startup")
+async def on_startup(ctx: Context):
+    ctx.logger.info("Child Imitation Agent is starting up...")
+
 @chat_protocol.on_message(ChatMessage, replies={ChatMessage, ChatAcknowledgement})
 async def handle_agentverse_chat(ctx: Context, sender: str, msg: ChatMessage):
     # Extract text from the incoming structured message

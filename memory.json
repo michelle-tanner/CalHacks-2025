@@ -255,6 +255,14 @@
         {
             "user": "{\"text\":\"i am very sad.\"}",
             "agent": "Oh no, Rachel... I'm so sorry you're feeling sad right now. That totally stinks. \ud83e\udec2\n\nBeing sad is like when it rains in your heart for a while, huh? You\u2019re super brave for saying it out loud, though. Lately\u2014have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"hello\"}",
+            "agent": "Heya Rachel! \ud83e\udd17 It's so good to hear from you! How are you feeling today? \ud83d\udc99 Wanna talk about something fun\u2014like capybaras, or maybe something that's been on your mind? I'm all ears! \ud83d\ude0a"
+        },
+        {
+            "user": "{\"text\":\"hello\"}",
+            "agent": "Heya Rachel! \ud83e\udd17 It's so good to hear from you! How are you feeling today? \ud83d\udc99 Wanna talk about something fun\u2014like capybaras, or maybe something that's been on your mind? I'm all ears! \ud83d\ude0a"
         }
     ],
     "facts": {

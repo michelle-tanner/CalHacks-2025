@@ -6,5 +6,9 @@
     "child-imitation-agent": {
         "identity_key": "ebd34c0f1b41585ec1a14fa7c8d5f48353f5420747019383e2c7d133f2404a57",
         "wallet_key": "swCrfXDSXL8yXjYpOxbe97JghY8wuo5JdJYjfefZpmQ="
+    },
+    "child-imitation": {
+        "identity_key": "3830b9134fca4c726e66028100256367db5b6507e73d92f5bd97d0ff59f528b2",
+        "wallet_key": "rwd7hbDGaXB4FtA4JXKiI/EBXiiIPZczExZv9f3xafU="
     }
 }
