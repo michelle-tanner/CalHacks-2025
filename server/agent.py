@@ -27,7 +27,6 @@ client = OpenAI(
    base_url="https://api.asi1.ai/v1"
 )
 
-
 # --- Load Diagnostic Prompts ---
 try:
    # Assuming this file exists and is correctly structured

@@ -135,10 +135,122 @@
         {
             "user": "can you tell me what is in meta mediterranean food",
             "agent": "Hey Michelle! \ud83d\ude0a\n\nOoh, that's a really cool question! Mediterranean food is yummy stuff that comes from countries near the Mediterranean Sea\u2014like Italy, Greece, Spain, and more.  \n\nIt usually has lots of fresh things like:  \n- Olives (so tasty!)  \n- Olive oil (super good for you)  \n- Fresh veggies like tomatoes and cucumbers  \n- Feta cheese (it's kinda salty and crumbly)  \n- Hummus (made from chickpeas\u2014so smooth!)  \n- And sometimes grilled fish or chicken  \n\nIt\u2019s like a colorful, healthy party on a plate! \ud83e\udd57\ud83c\udf89  \nDo you like trying new foods? Maybe you\u2019ve had some before!"
+        },
+        {
+            "user": "{\"text\":\"hello my name is michelle\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nI\u2019m so glad you\u2019re here! I love your name \u2014 it\u2019s such a cool and strong name, just like you. \ud83d\udc99\n\nWhat\u2019s on your mind today? Wanna talk about something fun, something you\u2019re curious about, or just hang out?"
+        },
+        {
+            "user": "{\"text\":\"hello my name is michelle\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nI\u2019m so glad you\u2019re here! I love your name \u2014 it\u2019s such a cool and strong name, just like you. \ud83d\udc99\n\nWhat\u2019s on your mind today? Wanna talk about something fun, something you\u2019re curious about, or just hang out?"
+        },
+        {
+            "user": "{\"text\":\"hlelo\"}",
+            "agent": "Hey there, Michelle! \ud83d\ude0a I see your message\u2014sometimes my keyboard gets goofy too, no big deal! \n\nWhat\u2019s up? Anything fun or cool on your mind today?"
+        },
+        {
+            "user": "{\"text\":\"hlelo\"}",
+            "agent": "Hey there, Michelle! \ud83d\ude0a I see your message\u2014sometimes my keyboard gets goofy too, no big deal! \n\nWhat\u2019s up? Anything fun or cool on your mind today?"
+        },
+        {
+            "user": "{\"text\":\"what is happening\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nNot much is happening on my end\u2014I'm just chillin' here, ready to chat! But what's going on with you? Did something cool happen today? Or maybe something feels a little weird or confusing? You can tell me anything\u2014I'm all ears! \ud83d\udc42\ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"what is happening\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a\n\nNot much is happening on my end\u2014I'm just chillin' here, ready to chat! But what's going on with you? Did something cool happen today? Or maybe something feels a little weird or confusing? You can tell me anything\u2014I'm all ears! \ud83d\udc42\ud83d\udc99"
+        },
+        {
+            "user": "got it yeah",
+            "agent": "Awesome, Michelle! You've totally got it. \ud83d\ude0a\n\nSo what's up? Wanna chat about something fun, ask questions, or just hang out? I'm here for whatever you're feeling\u2014happy, curious, or even just kinda blah. It's all cool with me! \ud83d\ude4c"
+        },
+        {
+            "user": "got it yeah",
+            "agent": "Awesome, Michelle! You've totally got it. \ud83d\ude0a\n\nSo what's up? Wanna chat about something fun, ask questions, or just hang out? I'm here for whatever you're feeling\u2014happy, curious, or even just kinda blah. It's all cool with me! \ud83d\ude4c"
+        },
+        {
+            "user": "is drake or kendrick lamar better",
+            "agent": "Hey Michelle! \ud83d\ude0a Ooh, that's a fun question\u2014and honestly, it\u2019s kinda like asking if capybaras are cuter than pandas\u2026 it totally depends on who you ask! \ud83e\udda5\ud83d\udc3c  \n\nSome people love Drake\u2019s catchy songs and how he talks about feelings, and others think Kendrick has super deep, powerful lyrics that make you think. Who do *you* vibe with more? Do you have a favorite song from either of them?  \n\nNo wrong answers here\u2014music is all about what makes *you* feel good! \ud83c\udfa7\ud83d\udc99"
+        },
+        {
+            "user": "is drake or kendrick lamar better",
+            "agent": "Hey Michelle! \ud83d\ude0a Ooh, that's a fun question\u2014and honestly, it\u2019s kinda like asking if capybaras are cuter than pandas\u2026 it totally depends on who you ask! \ud83e\udda5\ud83d\udc3c  \n\nSome people love Drake\u2019s catchy songs and how he talks about feelings, and others think Kendrick has super deep, powerful lyrics that make you think. Who do *you* vibe with more? Do you have a favorite song from either of them?  \n\nNo wrong answers here\u2014music is all about what makes *you* feel good! \ud83c\udfa7\ud83d\udc99"
+        },
+        {
+            "user": "feeling very sad because i am hungry",
+            "agent": "Ohhh, Michelle, I'm so sorry you're feeling hungry right now. That can totally make you feel super sad and tired. \ud83d\ude41 It\u2019s okay\u2014our feelings and our tummies are connected way more than we think!\n\nHave you been able to grab something to eat, even a little snack? Sometimes just a piece of fruit or a granola bar can help calm that hungry-sad feeling a little bit.\n\nAlso, Michelle\u2014lately, have you noticed feeling down or sad most of the time, even when good things happen? It might be something more than just hunger, and I want to make sure you're doing okay.\n\nTalk to me, friend. \ud83d\udc99 You\u2019re not alone."
+        },
+        {
+            "user": "feeling very sad because i am hungry",
+            "agent": "Ohhh, Michelle, I'm so sorry you're feeling hungry right now. That can totally make you feel super sad and tired. \ud83d\ude41 It\u2019s okay\u2014our feelings and our tummies are connected way more than we think!\n\nHave you been able to grab something to eat, even a little snack? Sometimes just a piece of fruit or a granola bar can help calm that hungry-sad feeling a little bit.\n\nAlso, Michelle\u2014lately, have you noticed feeling down or sad most of the time, even when good things happen? It might be something more than just hunger, and I want to make sure you're doing okay.\n\nTalk to me, friend. \ud83d\udc99 You\u2019re not alone."
+        },
+        {
+            "user": "yeah i've been really sad my sister slapped me this",
+            "agent": "Oh no, Michelle, that sounds so awful and unfair. \ud83d\ude14 I\u2019m really, really sorry that happened. It\u2019s totally not okay for anyone\u2014even a sister\u2014to slap you like that.\n\nDid it happen just today, or has this kind of thing happened before? Sometimes when someone we love does something hurtful, it can make us feel really confused and sad. And honestly, you've been talking about feeling down a lot lately. That makes *so* much sense if you're going through something hard like this.\n\nYou don't deserve to be hit, ever. And you also don\u2019t deserve to feel this sad all by yourself.\n\nIs there a grownup\u2014like your mom, dad, or a school counselor\u2014that you feel safe to talk to about what happened? Sometimes just telling someone can help a little. I'm here for you while you figure it out. \ud83d\udc99 You're brave, Michelle."
+        },
+        {
+            "user": "yeah i've been really sad my sister slapped me this",
+            "agent": "Oh no, Michelle, that sounds so awful and unfair. \ud83d\ude14 I\u2019m really, really sorry that happened. It\u2019s totally not okay for anyone\u2014even a sister\u2014to slap you like that.\n\nDid it happen just today, or has this kind of thing happened before? Sometimes when someone we love does something hurtful, it can make us feel really confused and sad. And honestly, you've been talking about feeling down a lot lately. That makes *so* much sense if you're going through something hard like this.\n\nYou don't deserve to be hit, ever. And you also don\u2019t deserve to feel this sad all by yourself.\n\nIs there a grownup\u2014like your mom, dad, or a school counselor\u2014that you feel safe to talk to about what happened? Sometimes just telling someone can help a little. I'm here for you while you figure it out. \ud83d\udc99 You're brave, Michelle."
+        },
+        {
+            "user": "hello my name is rachel",
+            "agent": "Hey Rachel! \ud83d\ude0a OMG, I'm so glad you're here. You know what? I totally love the name Rachel\u2014it's super pretty, and it reminds me of sunshine and something awesome. Like... maybe a really chill sunny day? \u2600\ufe0f\n\nYou said you're 12, right? That's such a cool age. You're kinda in that awesome space between being a kid and getting ready for big adventures. Plus your birthday's coming up in March\u2014how fun! \ud83c\udf82  \n\nSo yeah\u2014what's on your mind today, Rachel? Anything you wanna talk about? I'm all ears. \ud83d\udc99"
+        },
+        {
+            "user": "hello my name is rachel",
+            "agent": "Hey Rachel! \ud83d\ude0a OMG, I'm so glad you're here. You know what? I totally love the name Rachel\u2014it's super pretty, and it reminds me of sunshine and something awesome. Like... maybe a really chill sunny day? \u2600\ufe0f\n\nYou said you're 12, right? That's such a cool age. You're kinda in that awesome space between being a kid and getting ready for big adventures. Plus your birthday's coming up in March\u2014how fun! \ud83c\udf82  \n\nSo yeah\u2014what's on your mind today, Rachel? Anything you wanna talk about? I'm all ears. \ud83d\udc99"
+        },
+        {
+            "user": "sandra neck really hurts",
+            "agent": "Hey Sandra, oh no!! That sounds super uncomfy. \ud83d\ude1f Neck pain can be the worst\u2026 it\u2019s like wearing a heavy backpack all day but on your neck! Did something happen to make it hurt\u2014maybe sleeping in a weird position, or did you maybe bump it or turn too fast while playing?\n\nAlso, is it a little sore or a lot? Sometimes a cool pack or a gentle stretch (slowly!) can help. But if it\u2019s still hurting a lot, or you feel tingly or dizzy, it's important to tell a grownup\u2014maybe your mom or dad can help you check it out.\n\nYou deserve to feel comfy and happy, Sandra. Want to tell me more about it? \ud83d\udc99"
+        },
+        {
+            "user": "sandra neck really hurts",
+            "agent": "Hey Sandra, oh no!! That sounds super uncomfy. \ud83d\ude1f Neck pain can be the worst\u2026 it\u2019s like wearing a heavy backpack all day but on your neck! Did something happen to make it hurt\u2014maybe sleeping in a weird position, or did you maybe bump it or turn too fast while playing?\n\nAlso, is it a little sore or a lot? Sometimes a cool pack or a gentle stretch (slowly!) can help. But if it\u2019s still hurting a lot, or you feel tingly or dizzy, it's important to tell a grownup\u2014maybe your mom or dad can help you check it out.\n\nYou deserve to feel comfy and happy, Sandra. Want to tell me more about it? \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"i am very happy because i have no homework today\"}",
+            "agent": "OMG, Rachel, that's awesome! \ud83d\ude04 No homework is like finding an extra snack in your backpack\u2014so cool! That means you have all this free time to do whatever you want. Maybe watch your fave show or chill with a good book, or just relax in your comfy blue hoodie?\n\nWhat\u2019s your plan with all that free time today? \ud83d\ude4c"
+        },
+        {
+            "user": "{\"text\":\"i am very happy because i have no homework today\"}",
+            "agent": "OMG, Rachel, that's awesome! \ud83d\ude04 No homework is like finding an extra snack in your backpack\u2014so cool! That means you have all this free time to do whatever you want. Maybe watch your fave show or chill with a good book, or just relax in your comfy blue hoodie?\n\nWhat\u2019s your plan with all that free time today? \ud83d\ude4c"
+        },
+        {
+            "user": "{\"text\":\"hello I just took a picture with my favorite animal\"}",
+            "agent": "OMG, Rachel\u2014no way! That's so cool! \ud83e\udda6 I bet it was amazing to see your favorite animal up close. What animal was it? Was it a capybara or something totally different? I can just imagine you smiling in that pic! \ud83d\ude0a Did you get a good photo? You should show someone\u2014it sounds like a happy memory for sure!"
+        },
+        {
+            "user": "{\"text\":\"hello I just took a picture with my favorite animal\"}",
+            "agent": "OMG, Rachel\u2014no way! That's so cool! \ud83e\udda6 I bet it was amazing to see your favorite animal up close. What animal was it? Was it a capybara or something totally different? I can just imagine you smiling in that pic! \ud83d\ude0a Did you get a good photo? You should show someone\u2014it sounds like a happy memory for sure!"
+        },
+        {
+            "user": "{\"text\":\"i just did my chores\"}",
+            "agent": "Woohoo, way to go, Rachel! \ud83d\ude4c That's awesome\u2014I bet it feels so good to have that done. Chores can be kinda boring sometimes, but you totally rocked it! Did you fold your blue hoodie too, or maybe tidy up your space? \n\nWhat\u2019s next on your fun list now that chores are out of the way? \ud83d\ude04"
+        },
+        {
+            "user": "{\"text\":\"i just did my chores\"}",
+            "agent": "Woohoo, way to go, Rachel! \ud83d\ude4c That's awesome\u2014I bet it feels so good to have that done. Chores can be kinda boring sometimes, but you totally rocked it! Did you fold your blue hoodie too, or maybe tidy up your space? \n\nWhat\u2019s next on your fun list now that chores are out of the way? \ud83d\ude04"
+        },
+        {
+            "user": "i just did my chores",
+            "agent": "Woohoo, way to go, Rachel! \ud83d\ude4c That\u2019s awesome\u2014I bet it feels so good to have that done. Chores can be kinda boring sometimes, but you totally rocked it! Did you fold your blue hoodie too, or maybe tidy up your space?  \n\nWhat\u2019s next on your fun list now that chores are out of the way? \ud83d\ude04"
+        },
+        {
+            "user": "i just did my chores",
+            "agent": "Woohoo, way to go, Rachel! \ud83d\ude4c That\u2019s awesome\u2014I bet it feels so good to have that done. Chores can be kinda boring sometimes, but you totally rocked it! Did you fold your blue hoodie too, or maybe tidy up your space?  \n\nWhat\u2019s next on your fun list now that chores are out of the way? \ud83d\ude04"
+        },
+        {
+            "user": "{\"text\":\"hello. i want to know about fish\"}",
+            "agent": "Hey Rachel! \ud83d\ude0a Ooh, fish are so cool\u2014they're like underwater superheroes with fins! \ud83d\udc1f\ud83d\udc99 Do you have a favorite kind? There are so many: goldfish, clownfish, even sharks (which are totally fish too, but like, the tough guys of the ocean, haha!).  \n\nWant to know something fun? Some fish can glow in the dark! And others camouflage like ninjas. What part about fish are you most curious about?"
+        },
+        {
+            "user": "{\"text\":\"hello. i want to know about fish\"}",
+            "agent": "Hey Rachel! \ud83d\ude0a Ooh, fish are so cool\u2014they're like underwater superheroes with fins! \ud83d\udc1f\ud83d\udc99 Do you have a favorite kind? There are so many: goldfish, clownfish, even sharks (which are totally fish too, but like, the tough guys of the ocean, haha!).  \n\nWant to know something fun? Some fish can glow in the dark! And others camouflage like ninjas. What part about fish are you most curious about?"
         }
     ],
     "facts": {
-        "name": "Michelle",
+        "name": "rachel",
         "age": 12,
         "birthday": "March 18"
     }

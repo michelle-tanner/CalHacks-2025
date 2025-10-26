@@ -28,7 +28,7 @@ load_dotenv()
 # Fetch API keys from environment variables (Redundant, but kept for clarity)
 ASI_ONE_API_KEY = os.getenv("ASI_ONE_API_KEY")
 DEEPGRAM_KEY = os.getenv("DEEPGRAM_KEY")
-ELEVENLABS_KEY = os.getenv("ELEVENLABS_KEY")
+ELEVENLABS_API_KEY = os.getenv("ELEVENLABS_API_KEY")
 
 # Check if API keys are loaded successfully (Redundant, but kept for clarity)
 if not ASI_ONE_API_KEY:
@@ -108,6 +108,7 @@ async def voice_chat(ws: WebSocket):
             if audio_reply:
                 await ws.send_bytes(audio_reply)
             else:
+                #agent TTS (ElevenLabs) not working 
                 await ws.send_text("I can't talk right now, but here is my text reply: " + reply_text)
 
             pass 
@@ -120,44 +121,6 @@ async def voice_chat(ws: WebSocket):
             await ws.close()
         except Exception:
             pass
-
-
-# ------------------------------------------------
-## 2. HTTP POST Endpoint (Agentverse/ASI:One Protocol - from File 1)
-# ------------------------------------------------ 
-@app.post("/protocol-chat", response_model=ChatMessage)
-async def agentverse_chat(incoming_message: ChatMessage):
-    """
-    Handles structured ChatProtocol messages from Agentverse/ASI:One.
-    This endpoint ensures hackathon track compatibility.
-    """
-    
-    # 1. Extract the user's text from the structured message
-    user_text = ""
-    for content in incoming_message.content:
-        if isinstance(content, TextContent):
-            user_text = content.text
-            break
-
-    if not user_text:
-        # Acknowledge the message but return an error if no text is present
-        return ChatAcknowledgement(timestamp=datetime.utcnow(), acknowledged_msg_id=incoming_message.msg_id)
-
-    # 2. Call the unified agent logic
-    # Using the updated agent response logic (from File 2)
-    response_dict = await get_agent_response(user_text)
-    reply_text = response_dict['reply']
-    print(f"🌐 Agentverse User: {user_text}")
-    print(f"🌐 Agentverse Reply: {reply_text}")
-    
-    # 3. Wrap the agent's response back into a ChatMessage
-    outgoing_message = ChatMessage(
-        timestamp=datetime.utcnow(),
-        msg_id=uuid4(),
-        content=[TextContent(type="text", text=reply_text)]
-    )
-    
-    return outgoing_message
 
 
 # ------------------------------------------------
