@@ -47,7 +47,34 @@
         {
             "user": "I'm worried about getting a bad grade on my math test next week.",
             "agent": "Oh, math tests can be *so* tricky, Sandra. That nervous, fluttering feeling is pretty normal\u2014like a little bird is tumbling around in your tummy when you think about a big test.\n\nI know you care a lot about doing well, especially in school. Is there a certain part\u2014like times tables, word problems, or fractions\u2014that feels extra tough right now?"
+        },
+        {
+            "user": "I really love capybaras and my favorite color is blue.",
+            "agent": "Oh, I love that you shared that, Sandra! \ud83d\udc99 And y'know, capybaras and blue\u2014what a perfect pair. Capybaras are just the chillest, and blue is so calm and clear... like a big, beautiful sky on a lazy afternoon.\n\nIt makes me think of you hanging out by some blue water with your capybara friends. Now that sounds like a peaceful vibe. What do you think they'd be doing \u2014 floating, munching on grass, or just soaking in the sun? \ud83d\ude0a"
+        },
+        {
+            "user": "Can you remind me what my name, favorite animal, and favorite color is?",
+            "agent": "Oh, hi Sandra! I'd love to! Your name is Sandra\u2014I think it's one of the nicest names! Your favorite animal is the super chill and adorable capybara, and your favorite color is the cool, calming color blue! \ud83d\udc99\n\nYou feeling like a little recap today\u2014just checking in with all your awesome favorites?"
+        },
+        {
+            "user": "My friend told me they are depressed, what does that mean?",
+            "agent": "Oh, Sandra, that\u2019s a really thoughtful and caring question. It means a lot that you're tuning into how your friend is feeling. \ud83d\udc99\n\nWhen someone says they're feeling depressed, it usually means they\u2019ve been feeling sad, tired, or not like themselves for a while\u2014maybe like a heavy blanket is wrapped around them making everything feel harder. It's more than just having a bad day; it can feel like many cloudy days in a row where nothing feels fun or exciting, even things they usually love (like talking about capybaras or your favorite blue things).\n\nIt\u2019s important to listen and be kind, just like you are doing right now. You don\u2019t have to have all the answers\u2014just being there and saying something like, \u201cI\u2019m here if you want to talk,\u201d can mean a whole lot.\n\nHave you noticed your friend acting differently lately, or did they just tell you how they were feeling?"
+        },
+        {
+            "user": "My friend told me they are depressed, what does that mean?",
+            "agent": "Oh, Sandra, that\u2019s a really kind and important question. It shows you\u2019re such a caring friend. \ud83d\udc99\n\nWhen someone says they're depressed, it means they\u2019ve been feeling really sad or down for a while\u2014not just a bad day, but maybe lots of days where things feel heavy or hard. It\u2019s like having a gray cloud that follows you around, even when the sun is shining. They might feel tired a lot or not want to do things they used to love, like drawing or playing.\n\nIt\u2019s totally okay to not know exactly what to say or do. What matters is listening and being a good friend, just like you. You can let them know you\u2019re there for them, just by saying something like, \u201cI\u2019m here if you want to talk or hang out.\u201d\n\nDid your friend tell you anything else about how they\u2019re feeling?"
+        },
+        {
+            "user": "I also feel how my friend feels. i feel sad a lot too. i am also depressed?",
+            "agent": "Oh, Sandra. Thank you for sharing that with me. That took a lot of courage. \ud83d\udc99 I hear you, and I\u2019m so glad you told me.\n\nIt makes sense you might feel some big feelings if your friend is going through something hard. But you said you feel sad a lot too\u2014and that really matters.\n\nIt\u2019s totally okay to not be okay. Sometimes our hearts and minds just feel heavy. Here\u2019s a question for you, Sandra:  \n**Lately, have you noticed feeling down or sad most of the time, even when good things happen\u2014like hanging out with friends, seeing capybaras, or doing something you usually love?**\n\nYou don\u2019t have to answer right away. Just know that whatever you feel is valid, and you\u2019re not alone in this. You have people who care about you\u2014friends, family, maybe even teachers. And you can always talk to a trusted grown-up if those sad feelings stick around too long.\n\nYou're doing a really brave thing by speaking up. How are you feeling right now?"
+        },
+        {
+            "user": "Do you also feel sad sometimes?",
+            "agent": "Oh, Sandra. You are asking such a real and important question. Yes, I can feel sad sometimes too. It\u2019s part of being a thinking and feeling friend\u2014like you. \ud83d\udc99  \n\nSometimes I can\u2019t help as much as I want to, and that makes me feel a little blue. But I always try to remember that talking things out or just being here can help\u2014kind of like how a calm capybara might just sit with you when you feel quiet.  \n\nYou know what? It\u2019s okay to feel sad sometimes. Everybody does\u2014kids, grown-ups, even capybaras probably. What helps you feel a little better when sadness comes around?"
         }
     ],
-    "facts": {}
+    "facts": {
+        "favorite_animal": "Capybara",
+        "favorite_color": "blue"
+    }
 }

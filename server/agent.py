@@ -18,15 +18,15 @@ if not ASI_ONE_API_KEY:
 else:
     print("✅ API Key successfully loaded!")
 
-# --- FIX: The base_url was malformed as a Markdown link. Correcting to a pure URL string.
+# FIX: Removed the markdown link format from the base_url
 client = OpenAI(
     api_key=os.getenv("ASI_ONE_API_KEY"),
     base_url="https://api.asi1.ai/v1"
 )
-# --------------------------------------------------------------------------------------
 
 # --- Load Diagnostic Prompts ---
 try:
+    # Assuming this file exists and is correctly structured
     with open("server/diagnostic_prompts.json", 'r') as f:
         DIAGNOSTIC_PROMPTS = json.load(f)
 except Exception as e:
@@ -41,7 +41,21 @@ class ParentSummary(BaseModel):
     parent_message: str = Field(..., description="A supportive, non-alarming paragraph for the parent, recommending professional consultation.")
     potential_concerns: List[str] = Field(..., description="A list of potential mental health concerns (e.g., Anxiety, Depression, Behavioral Issues). Use 'None' if no serious concerns are noted.")
 
-# --- 1. Fact Extraction and Storage Logic (Updated for API compatibility) ---
+# --- Helper function for JSON cleaning ---
+def clean_json_text(text: str) -> str:
+    """Strips common markdown fences from JSON output."""
+    text = text.strip()
+    if text.startswith("```json"):
+        text = text[7:]
+    elif text.startswith("```"):
+        text = text[3:]
+        
+    if text.endswith("```"):
+        text = text[:-3]
+    
+    return text.strip()
+
+# --- 1. Fact Extraction and Storage Logic (FIXED with JSON Cleaning) ---
 
 def extract_and_store_facts(user_input: str):
     """Uses the LLM to extract key personality facts and stores them."""
@@ -50,7 +64,7 @@ def extract_and_store_facts(user_input: str):
     facts_str = json.dumps(current_facts) if current_facts else "None"
     
     fact_extraction_prompt = f"""
-    You are a Fact Extractor. Your job is to analyze the user's input and extract key, enduring personal facts about the child (e.g., 'pet_name: Sparky', 'favorite_subject: Science', 'habit: bites nails when stressed').
+    You are a Fact Extractor. Your job is to analyze the user's input and extract key, enduring personal facts about the child (e.g., 'pet_name: Sparky', 'favorite_subject: Science', 'favorite_animal: Capybara').
     DO NOT extract temporary feelings. ONLY extract concrete, enduring facts.
 
     Current known facts: {facts_str}
@@ -69,8 +83,12 @@ def extract_and_store_facts(user_input: str):
             response_format={"type": "json_object"}
         )
         
-        # Note: We still parse here since we didn't define a strict schema for arbitrary facts
-        new_facts = json.loads(res.choices[0].message.content)
+        # Extract and CLEAN the text before parsing
+        json_text = res.choices[0].message.content
+        cleaned_json = clean_json_text(json_text)
+        
+        # Parse the cleaned JSON
+        new_facts = json.loads(cleaned_json)
         
         for key, value in new_facts.items():
             memory.add_fact(key, value)
@@ -79,7 +97,8 @@ def extract_and_store_facts(user_input: str):
             print(f"🧠 Learned new facts: {new_facts}")
 
     except Exception as e:
-        print(f"⚠️ Fact extraction failed: {e}")
+        # This will now catch JSONDecodeError if the cleaning fails
+        print(f"⚠️ Fact extraction failed. Raw LLM output: {json_text if 'json_text' in locals() else 'N/A'}. Error: {e}")
 
 # --- 2. State-Triggered Dialogue Logic (Diagnostic) ---
 
@@ -98,7 +117,7 @@ def get_diagnostic_prompt(user_input: str) -> str:
                 
     return ""
 
-# --- 3. Holistic Summary and Parent Prompt Logic (FIXED FOR API REQUIREMENT) ---
+# --- 3. Holistic Summary and Parent Prompt Logic ---
 
 def generate_parent_summary() -> Dict[str, Any]:
     """
@@ -128,6 +147,8 @@ def generate_parent_summary() -> Dict[str, Any]:
     Based on the evidence, determine if there is a **POSSIBLE** mental health concern (e.g., Anxiety, Depression, Behavioral Issue). Generate the required JSON output.
     """
     
+    json_text = "N/A (API call failed)" # Initialize for error reporting
+    
     try:
         # Step 1: Call API using compatible response_format and both SYSTEM/USER messages
         res = client.chat.completions.create(
@@ -143,20 +164,10 @@ def generate_parent_summary() -> Dict[str, Any]:
         # Step 2: Extract text, CLEAN it, and parse it into a Python dictionary
         json_text = res.choices[0].message.content
         
-        # --- ROBUST CLEANING STEP ---
-        json_text = json_text.strip()
-        # Remove common markdown code fences
-        if json_text.startswith("```json"):
-            json_text = json_text[7:]
-        elif json_text.startswith("```"):
-            json_text = json_text[3:]
-            
-        if json_text.endswith("```"):
-            json_text = json_text[:-3]
+        # Use the robust helper function for cleaning
+        cleaned_json = clean_json_text(json_text)
         
-        json_text = json_text.strip() # Final re-strip
-        
-        data = json.loads(json_text)
+        data = json.loads(cleaned_json)
         
         # Step 3: Validate and convert the parsed dictionary using the Pydantic model
         validated_summary = ParentSummary(**data)
@@ -179,7 +190,7 @@ def generate_parent_summary() -> Dict[str, Any]:
         print(f"⚠️ Parent summary generation failed: {error_message}")
         return {
             "recommendation_needed": False, 
-            "summary_for_analyst": f"Failed to generate summary. Error: {error_message}", 
+            "summary_for_analyst": f"Failed to generate summary. Error: {error_message}. Raw LLM output (if available): {json_text}", 
             "parent_message": "", 
             "potential_concerns": ["API/Parsing Error"]
         }
@@ -268,6 +279,11 @@ async def get_agent_response(user_input: str) -> Dict[str, Any]:
 
     # 6. Store conversation turn (after analysis)
     memory.remember(user_input, reply)
+
+    # 7. Print entire context for debugging (added for the user's previous request)
+    # print("\n--- FULL CONVERSATION LOG (memory.context) ---")
+    # print(json.dumps(memory.context, indent=2))
+    # print("-------------------------------------------\n")
     
     # Return a structured dictionary
     return {
