@@ -247,6 +247,14 @@
         {
             "user": "{\"text\":\"hello. i want to know about fish\"}",
             "agent": "Hey Rachel! \ud83d\ude0a Ooh, fish are so cool\u2014they're like underwater superheroes with fins! \ud83d\udc1f\ud83d\udc99 Do you have a favorite kind? There are so many: goldfish, clownfish, even sharks (which are totally fish too, but like, the tough guys of the ocean, haha!).  \n\nWant to know something fun? Some fish can glow in the dark! And others camouflage like ninjas. What part about fish are you most curious about?"
+        },
+        {
+            "user": "{\"text\":\"i am very sad.\"}",
+            "agent": "Oh no, Rachel... I'm so sorry you're feeling sad right now. That totally stinks. \ud83e\udec2\n\nBeing sad is like when it rains in your heart for a while, huh? You\u2019re super brave for saying it out loud, though. Lately\u2014have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"i am very sad.\"}",
+            "agent": "Oh no, Rachel... I'm so sorry you're feeling sad right now. That totally stinks. \ud83e\udec2\n\nBeing sad is like when it rains in your heart for a while, huh? You\u2019re super brave for saying it out loud, though. Lately\u2014have you noticed feeling down or sad most of the time, even when good things happen?"
         }
     ],
     "facts": {

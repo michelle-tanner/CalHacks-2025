@@ -8,6 +8,7 @@ from server.tts import synthesize_speech
 # Combined and updated agent imports
 from server.agent import get_agent_response, client, generate_parent_summary_response
 from server.json_memory import memory
+from starlette.websockets import WebSocketDisconnect
 
 # --- New Imports for Agentverse Chat Protocol (from File 1) ---
 from uagents_core.contrib.protocols.chat import (
@@ -56,10 +57,10 @@ app.add_middleware(
 from starlette.websockets import WebSocketDisconnect #add if not present
 @app.websocket("/voice")
 async def voice_chat(ws: WebSocket):
-    await ws.accept()
-    print("🎙️ WebSocket connected")
-
     try:
+        await ws.accept()
+        print("🎙️ WebSocket connected")
+
         while True:
             #ws.receive() to handle text, bytes, or json
             data = await ws.receive()

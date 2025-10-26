@@ -1,31 +1,38 @@
 import os
-from uagents import Agent, Protocol, Context
-from uagents.setup import fund_agent_if_low
+from uagents import Agent, Protocol, Context, Model
+# from uagents.setup import fund_agent_if_low
+from dotenv import load_dotenv
 # Import the Chat Protocol tools you already use in main.py
 from uagents_core.contrib.protocols.chat import ChatMessage, TextContent, ChatAcknowledgement
+from uagents_core.contrib.protocols.chat import (
+    ChatAcknowledgement,
+    ChatMessage,
+    StartSessionContent,
+    EndSessionContent,
+    AgentContent,
+    TextContent,
+    chat_protocol_spec,
+)
 from datetime import datetime
 from uuid import uuid4
 
+load_dotenv()
 
 #import your core logic
 from server.agent import get_agent_response
 from uagents_core.contrib.protocols.chat import ChatMessage, TextContent, ChatAcknowledgement
 
 # --- Configuration ---
-AGENT_SEED = os.getenv("child_simulation_agent_ ") #unique seed for this agent
+AGENT_SEED_PHRASE = os.getenv("child_imitation_agent") #unique seed for this agent
 AGENTVERSE_ENDPOINT = os.getenv("AGENTVERSE_ENDPOINT", "https://agentverse.ai")
 
 #initialize agent
 agent = Agent(
     name="child-imitation-agent",
-    seed=AGENT_SEED,
-    # This is the CRITICAL part for connecting to the Agentverse:
-    endpoint=[AGENTVERSE_ENDPOINT],
-    mailbox=f"{AGENTVERSE_ENDPOINT}/submit",
+    port=8001,
+    endpoint=("http://127.0.0.1:8001/submit"),
+    mailbox=True,
 )
-
-#fund agent wallet
-fund_agent_if_low(agent.wallet.address)
 
 #define chat protocol
 chat_protocol = Protocol(name="Chat", version="1.0")

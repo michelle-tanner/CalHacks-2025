@@ -2,5 +2,9 @@
     "ChildAgent": {
         "identity_key": "e40cf8a66f5830759ba95065425e89a13a6b72a2e3a242ca86c432fd4ea96ffb",
         "wallet_key": "otzdrT/L1BACsbByZgR1CvX40JGV45b/8OIRFv30Szo="
+    },
+    "child-imitation-agent": {
+        "identity_key": "ebd34c0f1b41585ec1a14fa7c8d5f48353f5420747019383e2c7d133f2404a57",
+        "wallet_key": "swCrfXDSXL8yXjYpOxbe97JghY8wuo5JdJYjfefZpmQ="
     }
 }
