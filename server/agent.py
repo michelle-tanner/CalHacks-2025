@@ -10,8 +10,109 @@ from typing import Dict, Any, List
 from pydantic import BaseModel, Field, ValidationError
 
 
+# --------------------------------
+# uAgents Imports and Setup
+# --------------------------------
+
+from datetime import datetime
+from uuid import uuid4
+import os
+from dotenv import load_dotenv
+from uagents import Context, Protocol, Agent
+from uagents_core.contrib.protocols.chat import (
+    ChatAcknowledgement,
+    ChatMessage,
+    StartSessionContent,
+    EndSessionContent,
+    AgentContent,
+    TextContent,
+    chat_protocol_spec,
+)
+
 # Load environment variables and initialize client (unchanged)
 load_dotenv()
+
+agent = Agent(
+    name="child-imitation-agent",
+    port=8002,
+    seed=os.getenv("AGENT_SEED_PHRASE"),
+    endpoint=("http://127.0.0.1:8002/submit"),
+    mailbox=True,
+)
+protocol = Protocol(spec=chat_protocol_spec)
+
+# Chat protocol so you can message through asi one and agentverse
+@protocol.on_message(ChatMessage)
+async def handle_message(ctx: Context, sender: str, msg: ChatMessage):
+    await ctx.send(
+        sender,
+        ChatAcknowledgement(timestamp=datetime.now(), acknowledged_msg_id=msg.msg_id),
+    )
+    user_input = None
+    if isinstance(msg.content[-1], TextContent):
+        user_input = msg.content[-1].text.strip()
+
+    ctx.logger.info(f"Received message from {sender}. Input: '{user_input[:50]}...'")
+
+    response_text = "Sorry, I received an empty or unreadable message." # Default error
+    try:
+        if user_input:
+            # 3. Task Routing / Intent Detection
+        
+            # --- Task 1: Generate Parent Summary (Special Command) ---
+            if user_input.lower().startswith("!parent_summary"):
+                ctx.logger.info("Agent Flow: Escalation/Summary Report Generation.")
+                
+                # The agent executes the dedicated function to analyze context and facts
+                summary_data = await generate_parent_summary_response()
+                
+                # Format the dictionary response into a readable string
+                response_text = (
+                    f"--- Parent Summary Report ---\n"
+                    f"Recommendation Needed: {summary_data.get('recommendation_needed', 'N/A')}\n"
+                    f"Potential Concerns: {', '.join(summary_data.get('potential_concerns', ['None']))}\n"
+                    f"Parent Message:\n{summary_data.get('parent_message', 'Error')}\n\n"
+                    f"Analyst Summary (Detail):\n{summary_data.get('summary_for_analyst', 'Error')}"
+                )
+                
+            # --- Task 2: Conversational Flow (Default) ---
+            else:
+                ctx.logger.info("Agent Flow: Child Conversation & Silent Analysis.")
+                
+                # This function runs fact extraction, LLM reply, memory storage, and safety analysis
+                agent_output = await get_agent_response(user_input)
+                
+                response_text = agent_output.get('reply', 'Oops! I had trouble thinking of a response.')
+                
+                # Optionally log/process safety analysis results silently
+                alerts = agent_output.get('analysis', {}).get('alerts', [])
+                if alerts:
+                    ctx.logger.warning(f"!!! Safety Alert: {len(alerts)} triggers found: {alerts[0]['trigger_name']}")
+    except Exception as e:
+        ctx.logger.error(f"FATAL EXECUTION ERROR: The agent failed to generate a response. Details: {e}")
+        # Set a friendly, guaranteed message
+        response_text = "I'm sorry, I'm experiencing an internal communication issue right now. The error has been logged. Please try again in a moment."
+    # 4. Send the final response back
+    await ctx.send(sender, ChatMessage(
+        timestamp=datetime.now(),
+        msg_id=uuid4(),
+        content=[
+            TextContent(type="text", text=response_text),
+            # EndSessionContent(type="end-session") # Keep commented out for continuous chat
+        ]
+    ))
+
+
+@protocol.on_message(ChatAcknowledgement)
+async def handle_ack(ctx: Context, sender: str, msg: ChatAcknowledgement):
+    pass
+
+# I believe you have to have this to register it to AgentVerse
+agent.include(protocol, publish_manifest=True)
+
+if __name__ == "__main__":
+    agent.run()
+
 ASI_ONE_API_KEY = os.getenv("ASI_ONE_API_KEY")
 
 

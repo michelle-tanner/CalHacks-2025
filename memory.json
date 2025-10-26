@@ -271,6 +271,30 @@
         {
             "user": "{\"text\":\"my name is michelle. i want help with getting out of trouble. i didn't let my sister have my pillow.\",\"character\":\"owl\"}",
             "agent": "Hey Michelle! Oh wow, I love your name. And sounds like things are feeling kinda tricky right now with your sister and the pillow, huh?\n\nYou know, even the chillest capybaras have little arguments sometimes over stuff \u2014 like who gets the best spot in the water! \ud83d\ude04 It's totally normal.\n\nDo you wanna talk about it? Like, what happened when you didn\u2019t share the pillow? And maybe how you're both feeling now? Sharing can be tough sometimes, I totally get it."
+        },
+        {
+            "user": "{\"text\":\"hello. my favorite color is red. what about you?\",\"character\":\"rabbit\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a Ooh, red is such a cool and bold color\u2014like a super bright apple or a fire truck! I bet it looks awesome with your stuff.\n\nYou know what? I don't really have a favorite color, but I *love* it when people like you have one! It makes things more fun.  \nWhat else do you like that's red? Maybe a red pillow or a cute red notebook? \ud83d\udc07\ud83d\udc96"
+        },
+        {
+            "user": "{\"text\":\"hello. my favorite color is red. what about you?\",\"character\":\"rabbit\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a Ooh, red is such a cool and bold color\u2014like a super bright apple or a fire truck! I bet it looks awesome with your stuff.\n\nYou know what? I don't really have a favorite color, but I *love* it when people like you have one! It makes things more fun.  \nWhat else do you like that's red? Maybe a red pillow or a cute red notebook? \ud83d\udc07\ud83d\udc96"
+        },
+        {
+            "user": "{\"text\":\"right\",\"character\":\"owl\"}",
+            "agent": "Oh, thank goodness! I was a little worried for a sec\u2014I thought I\u2019d mixed up your name! \ud83d\ude05 So\u2026 Michelle\u2014got it.\n\nAlrighty. Let\u2019s try this again. \ud83d\udc4c You were saying something about your sister and a pillow? Stuff like that happens all the time, especially with sibs. You\u2019re not in trouble with me\u2014I\u2019m just here to chat if you wanna share. What\u2019s going on?"
+        },
+        {
+            "user": "{\"text\":\"right\",\"character\":\"owl\"}",
+            "agent": "Oh, thank goodness! I was a little worried for a sec\u2014I thought I\u2019d mixed up your name! \ud83d\ude05 So\u2026 Michelle\u2014got it.\n\nAlrighty. Let\u2019s try this again. \ud83d\udc4c You were saying something about your sister and a pillow? Stuff like that happens all the time, especially with sibs. You\u2019re not in trouble with me\u2014I\u2019m just here to chat if you wanna share. What\u2019s going on?"
+        },
+        {
+            "user": "{\"text\":\"My name is michelle. ive been feeling a little sad.\",\"character\":\"owl\"}",
+            "agent": "Hey Michelle. It's really brave of you to tell me you've been feeling a little sad. I'm right here with you, okay?\n\nYou know, even capybaras\u2014those super chill animals\u2014have days when they feel a bit down too. It's totally normal.\n\nCan I ask... lately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"My name is michelle. ive been feeling a little sad.\",\"character\":\"owl\"}",
+            "agent": "Hey Michelle. It's really brave of you to tell me you've been feeling a little sad. I'm right here with you, okay?\n\nYou know, even capybaras\u2014those super chill animals\u2014have days when they feel a bit down too. It's totally normal.\n\nCan I ask... lately, have you noticed feeling down or sad most of the time, even when good things happen?"
         }
     ],
     "facts": {
