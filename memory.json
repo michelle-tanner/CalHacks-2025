@@ -263,10 +263,18 @@
         {
             "user": "{\"text\":\"hello\"}",
             "agent": "Heya Rachel! \ud83e\udd17 It's so good to hear from you! How are you feeling today? \ud83d\udc99 Wanna talk about something fun\u2014like capybaras, or maybe something that's been on your mind? I'm all ears! \ud83d\ude0a"
+        },
+        {
+            "user": "{\"text\":\"my name is michelle. i want help with getting out of trouble. i didn't let my sister have my pillow.\",\"character\":\"owl\"}",
+            "agent": "Hey Michelle! Oh wow, I love your name. And sounds like things are feeling kinda tricky right now with your sister and the pillow, huh?\n\nYou know, even the chillest capybaras have little arguments sometimes over stuff \u2014 like who gets the best spot in the water! \ud83d\ude04 It's totally normal.\n\nDo you wanna talk about it? Like, what happened when you didn\u2019t share the pillow? And maybe how you're both feeling now? Sharing can be tough sometimes, I totally get it."
+        },
+        {
+            "user": "{\"text\":\"my name is michelle. i want help with getting out of trouble. i didn't let my sister have my pillow.\",\"character\":\"owl\"}",
+            "agent": "Hey Michelle! Oh wow, I love your name. And sounds like things are feeling kinda tricky right now with your sister and the pillow, huh?\n\nYou know, even the chillest capybaras have little arguments sometimes over stuff \u2014 like who gets the best spot in the water! \ud83d\ude04 It's totally normal.\n\nDo you wanna talk about it? Like, what happened when you didn\u2019t share the pillow? And maybe how you're both feeling now? Sharing can be tough sometimes, I totally get it."
         }
     ],
     "facts": {
-        "name": "rachel",
+        "name": "michelle",
         "age": 12,
         "birthday": "March 18"
     }

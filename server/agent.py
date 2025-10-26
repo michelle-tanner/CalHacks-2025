@@ -25,7 +25,7 @@ else:
 client = OpenAI(
    api_key=os.getenv("ASI_ONE_API_KEY"),
    base_url="https://api.asi1.ai/v1",
-   model="asi1-mini"
+#    model="asi1-mini"
 )
 
 # --- Load Diagnostic Prompts ---
