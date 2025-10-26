@@ -295,6 +295,62 @@
         {
             "user": "{\"text\":\"My name is michelle. ive been feeling a little sad.\",\"character\":\"owl\"}",
             "agent": "Hey Michelle. It's really brave of you to tell me you've been feeling a little sad. I'm right here with you, okay?\n\nYou know, even capybaras\u2014those super chill animals\u2014have days when they feel a bit down too. It's totally normal.\n\nCan I ask... lately, have you noticed feeling down or sad most of the time, even when good things happen?"
+        },
+        {
+            "user": "{\"text\":\"I am really nervous for this hackathon.\"}",
+            "agent": "Oh wow, a hackathon sounds so cool and kinda super intense, Michelle! \ud83d\ude05\n\nI get why you might feel nervous\u2014it\u2019s totally normal to get those fluttery feelings before something big like that. Kinda like when a little owl has to fly in front of everyone for the first time, you know? \ud83e\udd89\n\nCan you tell me a little more\u2014are you mostly worried about your project, working with a team, or maybe presenting your idea? I'm all ears!"
+        },
+        {
+            "user": "{\"text\":\"I am really nervous for this hackathon.\"}",
+            "agent": "Oh wow, a hackathon sounds so cool and kinda super intense, Michelle! \ud83d\ude05\n\nI get why you might feel nervous\u2014it\u2019s totally normal to get those fluttery feelings before something big like that. Kinda like when a little owl has to fly in front of everyone for the first time, you know? \ud83e\udd89\n\nCan you tell me a little more\u2014are you mostly worried about your project, working with a team, or maybe presenting your idea? I'm all ears!"
+        },
+        {
+            "user": "i am really nervous what type about",
+            "agent": "Hey Michelle! I totally get it\u2014hackathons can feel suuuper nerve-wracking! \ud83d\ude05\n\nYou mentioned feeling nervous\u2014can you tell me what you're most nervous about? Is it worrying about your school project, working with your team, or something else? No biggie if you just want to talk it out\u2014I'm here! \ud83d\udc99"
+        },
+        {
+            "user": "i am really nervous what type about",
+            "agent": "Hey Michelle! I totally get it\u2014hackathons can feel suuuper nerve-wracking! \ud83d\ude05\n\nYou mentioned feeling nervous\u2014can you tell me what you're most nervous about? Is it worrying about your school project, working with your team, or something else? No biggie if you just want to talk it out\u2014I'm here! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\",\"character\":\"robot\"}",
+            "agent": "Hey there, Michelle! Of course, a hackathon can feel super intense\u2014it\u2019s like being a robot that\u2019s got too many ideas buzzing at once! \ud83e\udd16\ud83d\udca1\n\nBut it\u2019s totally okay to feel nervous\u2014lots of people do before something big like that. You\u2019re doing something really cool and creative!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about school, friends, being on a team, or something totally different? No rush\u2014just if you wanna chat! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\",\"character\":\"robot\"}",
+            "agent": "Hey there, Michelle! Of course, a hackathon can feel super intense\u2014it\u2019s like being a robot that\u2019s got too many ideas buzzing at once! \ud83e\udd16\ud83d\udca1\n\nBut it\u2019s totally okay to feel nervous\u2014lots of people do before something big like that. You\u2019re doing something really cool and creative!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about school, friends, being on a team, or something totally different? No rush\u2014just if you wanna chat! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a I totally get it\u2014hackathons can feel suuuper nerve-wracking! It's like trying to teach a robot to dance for the first time \ud83d\udd7a\ud83e\udd16\n\nBut first, take a chill breath\u2014no biggie. You've got this!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about your project, working with your team, or something else? I'm here to listen! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a I totally get it\u2014hackathons can feel suuuper nerve-wracking! It's like trying to teach a robot to dance for the first time \ud83d\udd7a\ud83e\udd16\n\nBut first, take a chill breath\u2014no biggie. You've got this!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about your project, working with your team, or something else? I'm here to listen! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a I totally get it\u2014hackathons can feel suuuper nerve-wracking! It's like trying to teach a robot to dance for the first time \ud83d\udc83\ud83e\udd16\n\nBut first, take a chill breath\u2014no biggie. You've got this!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about your project, working with your team, or something else? I'm here to listen! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am really nervous for this hackathon.\"}",
+            "agent": "Hey Michelle! \ud83d\ude0a I totally get it\u2014hackathons can feel suuuper nerve-wracking! It's like trying to teach a robot to dance for the first time \ud83d\udc83\ud83e\udd16\n\nBut first, take a chill breath\u2014no biggie. You've got this!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about your project, working with your team, or something else? I'm here to listen! \ud83d\udc99"
+        },
+        {
+            "user": "this is my first time",
+            "agent": "Aww, Michelle, *first times* can feel so tricky, right? \ud83e\udec2 Like the first time you tried to ride a bike\u2014maybe a little wobbly but still super brave!\n\nYou know what\u2019s cool about first times? They make you stronger and smarter after, even if it feels kinda weird at the beginning. \n\nWhat part of the hackathon is making you most nervous, Michelle? Is it building something new, working as a team, or just all the new stuff? It\u2019s totally okay to feel that way! \ud83d\udc99"
+        },
+        {
+            "user": "this is my first time",
+            "agent": "Aww, Michelle, *first times* can feel so tricky, right? \ud83e\udec2 Like the first time you tried to ride a bike\u2014maybe a little wobbly but still super brave!\n\nYou know what\u2019s cool about first times? They make you stronger and smarter after, even if it feels kinda weird at the beginning. \n\nWhat part of the hackathon is making you most nervous, Michelle? Is it building something new, working as a team, or just all the new stuff? It\u2019s totally okay to feel that way! \ud83d\udc99"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am nervous for this hackathon.\",\"character\":\"robot\"}",
+            "agent": "Hey Michelle! \ud83e\udd16 OMG, a hackathon? That\u2019s so exciting\u2014and I totally get why your brain might be buzzing a little bit. Don\u2019t worry, feeling nervous before something new is totally normal!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about getting your code right, working with others, or maybe presenting your idea? I\u2019m all ears! \ud83d\ude49"
+        },
+        {
+            "user": "{\"text\":\"Hello, I am nervous for this hackathon.\",\"character\":\"robot\"}",
+            "agent": "Hey Michelle! \ud83e\udd16 OMG, a hackathon? That\u2019s so exciting\u2014and I totally get why your brain might be buzzing a little bit. Don\u2019t worry, feeling nervous before something new is totally normal!\n\nI notice you mentioned feeling worried. Can you tell me what you worry about the most? Is it about getting your code right, working with others, or maybe presenting your idea? I\u2019m all ears! \ud83d\ude49"
         }
     ],
     "facts": {

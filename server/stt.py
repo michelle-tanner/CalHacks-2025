@@ -8,18 +8,18 @@ async def transcribe_audio(audio_bytes: bytes) -> str:
         return "[Deepgram API key missing]"
     
     timeout_config = aiohttp.ClientTimeout(total=30)  # 30 seconds timeout
-    header = {
-        "Authorization": f"Token {dg_key}",
-        "Content-Type": "audio/webm",
-    }
+    # header = {
+    #     "Authorization": f"Token {dg_key}",
+    #     "Content-Type": "audio/webm",
+    # }
     async with aiohttp.ClientSession(timeout=timeout_config) as session:
         async with session.post(
-            # "https://api.deepgram.com/v1/listen",
-            # headers={"Authorization": f"Token {dg_key}"},
-            # data=audio_bytes
-            "https://api.deepgram.com/v1/listen?model=general&language=en",
-            headers=headers,
+            "https://api.deepgram.com/v1/listen",
+            headers={"Authorization": f"Token {dg_key}"},
             data=audio_bytes
+            # "https://api.deepgram.com/v1/listen?model=general&language=en",
+            # headers=headers,
+            # data=audio_bytes
         ) as resp:
             if resp.status != 200:
                 text = await resp.text()
